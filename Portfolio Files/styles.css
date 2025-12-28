@@ -1,0 +1,446 @@
+html {
+    font-family: 'Oxanium', cursive;
+}
+
+body {
+    background-color: #756565;
+    
+    /* background-image: linear-gradient(rgb(0, 0, 0), #064d4979); */
+    background-position-x: 50%;
+    background-position-y: 0px;
+    background-size: 1000px 5000px;
+    background-repeat: repeat-y;
+}
+
+label {
+    background-color: rgba(123, 239, 241, 0.502);
+    background-image: url('images/kenrick-mills-7Jfpy_ctV_c-unsplash.jpg');
+    background-size: 402px;
+    background-position-x: 50%;
+    background-position-y: 55%;
+    opacity: 80%;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid #009a8f;
+    margin: 3px 1px;
+}
+
+input {
+    background-color: #00877e93;
+    border: none;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    outline-width: 1px;
+    border-radius: 18px;
+}
+input:hover {
+    background-color: #cc6e38ba;
+    color: white;
+    outline-color: rgb(226, 209, 194);
+    outline-width: 2px;
+}
+input:active {
+    background-color: #005b5593;
+    color: white;
+}
+
+
+#addForm{
+    text-align: center;
+}
+#editForm{
+    text-align: center;
+}
+
+.flex-container{
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+table{
+    background-color: rgba(123, 239, 241, 0.502);
+    background-image: url('images/jenny-caywood-0kTODzFNzz4-unsplash.jpg');
+    background-image: url('images/kenrick-mills-7Jfpy_ctV_c-unsplash.jpg');
+    background-size: 1500px;
+    background-position: center;
+    background-attachment: fixed;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 95%;
+}
+thead {
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+thead, td, #TableHead th {
+border: none;
+padding: 8px;
+}
+tbody tr:nth-child(even){
+    background-color: #ffffff53;
+}
+tbody tr:nth-child(odd){
+    background-color: #ffffff33;
+}
+thead:hover {
+    background-color: rgba(255, 245, 248, 0.057);
+}
+thead th {
+padding-top: 9px;
+padding-bottom: 9px;
+text-align: center;
+background-color: rgba(10, 21, 18, 0.578);
+color: white;
+}
+
+h1 {
+    display: inline-block;
+    background-image: linear-gradient(rgba(123, 239, 241, 0.502), rgba(45, 186, 188, 0.434));
+    background-image: url('images/kenrick-mills-7Jfpy_ctV_c-unsplash.jpg');
+    background-size: 800px;
+    background-position: center;
+    opacity: 90%;
+    padding: 7px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 7px;
+    /*                    Curved Corners                  */
+    border-radius: 15px;
+
+    font-size: 47px;
+
+}
+
+.radial-gradient {
+    
+    /*Fallback if gradeints don't work */
+    background: #a8dad6;
+    /*Linear gradient... */
+    background: 
+      radial-gradient(
+       at center, #6db1bd, #33a1b4
+      );
+}
+
+
+.distinct {
+    
+    margin:auto;
+    padding-top:10px;
+    padding-bottom:10px;
+    /*                    Curved Corners                  */
+    border-radius: 5px;
+}
+
+.imageContain {
+    margin:auto;
+    border-radius: 10vw;
+    
+    box-shadow: 0px 0px 40px 10px rgba(228, 217, 217, 0.672);
+}
+
+.darkShadow {
+    box-shadow: 0px 0px 40px 10px rgba(77, 77, 77, 0.501);
+}
+
+.lightShadow {
+    box-shadow: 0px 0px 40px 10px rgba(242, 236, 236, 0.616);
+}
+
+.div_img {
+    background-color: rgba(208, 231, 235, 0.884);
+    background-image: url('images/kenrick-mills-7Jfpy_ctV_c-unsplash.jpg');
+    background-size: 1000px;
+    background-position: center;
+    /* background-position-x: 50%;
+    background-position-y: 0px; */
+    
+    background-repeat: no-repeat;
+}
+
+.vignette {
+    box-shadow: inset 0px 0px 50px 20px rgba(58, 58, 58, 0.315);
+    /* filter: blur(1px); */
+}
+
+/* .navBar {
+    background-color: #6f5353;
+} */
+
+.navLink {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* background-color: #333; */
+    
+  }
+
+.navItem {
+  display: inline;
+  float: right;
+}
+
+.navA {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+}
+
+.navA:hover {
+    background-image: linear-gradient(#007185ec, #fcfcfc00);
+    text-shadow: 0px 0px 10px #ffffff80;
+    box-shadow: 0px 0px 50px 2px rgba(28, 45, 57, 0.115);
+    /* background: radial-gradient(at center, #83d7e1d0,  #ffe7d700); */
+    /* box-shadow: inset 0px 0px 15px 7px #d3f9fd29; */
+}
+
+.navA:active {
+    background-image: linear-gradient(#006a7cec, #b7dde21e);
+    text-shadow: 0px 0px 10px #ffffff94;
+    box-shadow: 0px 0px 10px 1px rgba(243, 243, 243, 0.116);
+}
+
+/* .icon{
+    font-size:16px;
+} */
+
+/* If the screen size is 600px wide or less, set the font-size */
+@media screen and (max-width: 600px) {
+    #headerTitle {
+        font-size: 7.75vw;
+    }
+    .imageContain {
+        width:83vw;
+    }
+    footer {
+        font-size:3.2vw;
+    }
+    .footA {
+        width:50vw;
+    }
+    .body_text {
+        width: 60vw;
+    }
+    .distinct {
+        width:80%;
+    }
+}
+
+/* If the screen size is 601px wide or more, set the font-size */
+@media screen and (min-width: 601px) {
+    #headerTitle {
+        font-size: 47px;
+    }
+    footer {
+        font-size:19px;
+    }
+    .footA {
+        width:37vw;
+    }
+    .body_text {
+        width: 50vw;
+    }
+    .distinct {
+        width:60%;
+    }
+  }
+
+
+
+.dropdown-content {
+    display: none;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    display: block;
+    text-align: left;
+}
+
+.myLinks:hover .dropdown-content {
+    display: block;
+}
+
+.footItem {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 30px;
+    text-decoration: none;
+    display:inline-block;
+}
+
+.footA {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 23px 40px;
+    
+    text-decoration: none;
+    /*border-radius: 30px;*/
+    
+    display:inline-block;
+    margin:auto;
+}
+
+.footA:hover {
+    background-image: linear-gradient(#fcfcfc00, #0071852b);
+    text-shadow: 0px 0px 10px #ffffff80;
+    box-shadow: 0px 0px 50px 2px rgba(28, 45, 57, 0.115);
+    /* background: radial-gradient(at center, #83d7e1d0,  #ffe7d700); */
+    /* box-shadow: inset 0px 0px 15px 7px #d3f9fd29; */
+}
+
+.footA:active {
+    background-image: linear-gradient(#b7dde21e,#006a7cec);
+    text-shadow: 0px 0px 10px #ffffff94;
+    box-shadow: 0px 0px 10px 1px rgba(243, 243, 243, 0.116);
+}
+
+.disconnect {
+    height: 2px;
+    background-image: linear-gradient(#aed9df1e,#d8d8d849);
+    padding: 1px 2px;
+    box-shadow: 0px 0px 40px 10px rgba(242, 236, 236, 0.616);
+}
+
+
+.dropdown-content-foot {
+    display: none;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content-foot a {
+    display: block;
+    text-align: left;
+}
+
+.footIcon {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+    text-decoration: none;
+    display:inline-block;
+}
+
+.iconLink {
+    
+    padding: 17.5px 30px;
+}
+
+.padding {
+    padding: 3px;
+}
+
+.body_text {
+    /*width: 60vw;*/
+    padding: 10px;
+    font-weight: 600;
+    box-shadow: 0px 0px 28px 4px white;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.496);
+}
+
+.header_text {
+    /*width: 60vw;*/
+    padding: 14px;
+    font-weight: 600;
+    box-shadow: 0px 0px 28px 3px white;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.319);
+}
+
+
+/* copy email Tooltip */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 130px;
+    background-color: rgba(64, 69, 72, 0.966);
+    background-image: url('images/kenrick-mills-7Jfpy_ctV_c-unsplash.jpg');
+    
+    background-position: center;
+    background-size: 500px;
+    background-position-y: 69%;
+    background-position-x: 56%;
+    color: rgb(255, 255, 255);
+    text-shadow:    1px .5px .95px rgba(0, 0, 0, 0.25)
+                    
+                    ; 
+    /* text-shadow:    1px 1px .9px rgba(0, 0, 0, 0.30),
+                    -1px -1px .9px rgba(0, 0, 0, 0.30),
+                    -1px 0px .9px rgba(0, 0, 0, 0.30),
+                    0px -1px .9px rgba(0, 0, 0, 0.30),
+                    0px 1px .9px rgba(0, 0, 0, 0.30),
+                    1px 0px .9px rgba(0, 0, 0, 0.30),
+                    2px 2px .9px rgba(0, 0, 0, 0.10),
+                    -2px -2px .9px rgba(0, 0, 0, 0.10),
+                    -2px 0px .9px rgba(0, 0, 0, 0.10),
+                    0px -2px .9px rgba(0, 0, 0, 0.10),
+                    0px 2px .9px rgba(0, 0, 0, 0.10),
+                    2px 0px .9px rgba(0, 0, 0, 0.10)
+                    ; */
+    box-shadow: 0px 0px 40px 10px rgba(242, 236, 236, 0.616);
+    text-align: center;
+    border-radius: 7px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(231, 238, 241, 0.531) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
