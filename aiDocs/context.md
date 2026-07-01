@@ -10,27 +10,29 @@ Personal developer portfolio — recruiter-scannable and voice-first. One-line p
 
 **Stack:** Astro · Tailwind v4 · React integration can be configured (if necessary for React islands) · GitHub Pages
 
+**Deploy:** branch `staging` · GitHub Pages · owner `davidschraedel.github.io` · derive `base` and public URL from git remote (see [Step 1](../ai/notes/2026-07-01_initial-agent-instructions.md))
+
 ---
 
 ## aiDocs/ — permanent knowledge (tracked)
 
-| File                                 | What's in it                                                                 |
-| ------------------------------------ | ---------------------------------------------------------------------------- |
-| [prd.md](./prd.md)                   | Product requirements — features, users, success criteria (v3.2)              |
-| [mvp.md](./mvp.md)                   | Minimum product for success — validation gates (v2.2)                        |
-| [coding-style.md](./coding-style.md) | How to write code in this repo                                               |
-| [architecture.md](./architecture.md) | Data layer, layout shell, pages, dim mode, button system                   |
-| [changelog.md](./changelog.md)       | Concise change history — update with every commit                            |
+| File                                 | What's in it                                                    |
+| ------------------------------------ | --------------------------------------------------------------- |
+| [prd.md](./prd.md)                   | Product requirements — features, users, success criteria (v3.2) |
+| [mvp.md](./mvp.md)                   | Minimum product for success — validation gates (v2.2)           |
+| [coding-style.md](./coding-style.md) | How to write code in this repo                                  |
+| [architecture.md](./architecture.md) | Data layer, layout shell, pages, dim mode, button system        |
+| [changelog.md](./changelog.md)       | Concise change history — update with every commit               |
 
 ---
 
 ## ai/ — working space (gitignored)
 
-| Folder                       | Use                                       |
-| ---------------------------- | ----------------------------------------- |
+| Folder                       | Use                                                                                                                                         |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | [notes/](../ai/notes/)       | Research and brainstorming — start with [initial-agent-instructions.md](../ai/notes/initial-agent-instructions.md) for new refactor context |
-| [roadmaps/](../ai/roadmaps/) | Plans and implementation checklists       |
-| [guides/](../ai/guides/)     | Library docs and external research output |
+| [roadmaps/](../ai/roadmaps/) | Plans and implementation checklists                                                                                                         |
+| [guides/](../ai/guides/)     | Library docs and external research output                                                                                                   |
 
 Notable notes: [techstack report](../ai/notes/2026-06-14_techstack-report.md) · [Astro research](../ai/notes/2026-06-14_astro-framework-research.md)
 
