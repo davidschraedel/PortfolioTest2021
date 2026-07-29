@@ -2,15 +2,17 @@
 
 Personal developer portfolio — recruiter-scannable and voice-first. One-line pitch: [description.md](./description.md)
 
-**Status:** Initial legacy project skeleton is ready for refactoring into Astro.
+**Status:** P0 complete — headshot confirmed (`ai/files-to-move/headshot.jpg`); ready for P1 Astro scaffold. Active roadmap: [2026-07-01_portfolio-astro-refactor_roadmap.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_roadmap.md) · Plan: [2026-07-01_portfolio-astro-refactor_plan.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_plan.md) · Analysis: [project-starting-state.md](../ai/notes/project-starting-state.md)
 
 **Post-MVP (not blocking launch):** Case study routes can exist as “coming soon” stubs; `handshakeLine` is in data but not rendered; PRD nice-to-haves (JSON-LD, sitemap, analytics, etc.) not built. Hero and about copy still need cold-read validation before recruiter outreach — see [mvp.md](./mvp.md) §5.
 
-**Product docs:** [prd.md](./prd.md) v3.2 · [mvp.md](./mvp.md) v2.2 · Content model: `src/data/profile.json` (single source of truth — reusable template for other projects)
+**Product docs:** [prd.md](./prd.md) v3.2 · [mvp.md](./mvp.md) v2.2 · Content model: `src/data/profile.json` (single source of truth — staged in `ai/files-to-move/` until P2)
 
-**Stack:** Astro · Tailwind v4 · React integration can be configured (if necessary for React islands) · GitHub Pages
+**Stack (target):** Astro · Tailwind v4 · React islands only if required · GitHub Pages
 
-**Deploy:** branch `staging` · GitHub Pages · owner `davidschraedel.github.io` · derive `base` and public URL from git remote (see [Step 1](../ai/notes/2026-07-01_initial-agent-instructions.md))
+**Current (legacy):** Static HTML/CSS/jQuery in `legacy/` — read-only reference
+
+**Deploy:** branch `staging` · GitHub Pages · repo `davidschraedel/PortfolioTest2021` · base `/PortfolioTest2021/` · URL `https://davidschraedel.github.io/PortfolioTest2021/` (project site — derive from git remote)
 
 ---
 
