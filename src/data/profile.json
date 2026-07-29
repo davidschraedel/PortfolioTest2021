@@ -1,0 +1,274 @@
+{
+  "person": {
+    "name": "David Schraedel",
+    "email": "davidschraedel@gmail.com",
+    "location": "Salt Lake City, UT",
+    "timezone": "America/Denver",
+    "openToWork": true,
+    "resume": "resume.pdf"
+  },
+  "about": {
+    "heading": "About Me",
+    "tldr": "I play nice, strive for quality, ask questions, and practice humility.",
+    "shareDescription": "David Schraedel — Technology professional with a multidisciplinary path from music to information systems. Data, AI, and product.",
+    "paragraphs": [
+      "Having recently completed a Master of Information Systems Management, I’m passionate about solving problems strategically and intentionally. I enjoy seeing the big picture, learning from others’ perspectives, and collaborating across domains and disciplines. With training and experience spanning family studies, music, business, technology, and negotiation, I’ve developed strong listening skills, a creative mindset, and a genuine curiosity that I bring to every project and initiative I undertake. My goal is to improve processes and experiences, encourage and facilitate informed decisions, and build intentional products.",
+      "I entered tech from an arts background, which still shapes how I think about much of what I do. I studied Information Systems at BYU, but before that I was deep in music, spending years in trombone, choral groups, music production, and live accompaniment for dance courses, where I improvised across 13 instruments and tools to create something fresh, on-the-fly, every class.",
+      "In my Master of Information Systems Management, I focused on data, product management, cloud infrastructure, and AI. Before that, I had taught myself React and spent time exploring web development as a career path. Though I loved the user experience and visual side of this work, I felt drawn toward automation and other means of removing technological friction.",
+      "My general background is multidisciplinary in a way I have come to appreciate. Manufacturing, dental tech, web development, TA roles, study abroad, education, and music have all quietly shaped how I think. At BYU, I also studied abroad with about 30 other students from my Information Systems program, traveling the United Kingdom, Italy, and Switzerland to examine everyday applications of technology and the Fourth Industrial Revolution in real settings. This busy travel schedule taught me as much about the world and technology as it did about adaptability, low ego, and curiosity in relationship with my peers.",
+      "I took a pretty broad approach to undergrad, minoring in Family Life and taking courses in anthropology, yoga, philosophy, religious text analysis, and interior design. One of my favorite subjects was negotiation, which changed how I approach conflicts between ideas or individuals. I also sang for two years in BYU's selective choral program, first in the BYU Men's Chorus and then Concert Choir. Outside of coursework, I was involved in the Mindfulness and Meditation Club, Introverts in Business, UX Design Association, AI in Business Society, Association for Information Systems, and Product Management Association. I also enjoyed international film showings, where I was exposed to perspectives from and about other cultures.",
+      "The through-line in how people describe me has been that I listen well and stay genuinely curious. I think before I speak, I care about getting details right, and I am genuinely interested in the people I work with. If there is anything I’m most proud of, it’s that I have an open mind with high standards."
+    ],
+    "images": {
+      "image-1": "image-1.jpg",
+      "image-2": "image-2.jpg",
+      "image-3": "image-3.jpg"
+    }
+  },
+  "hero": {
+    "contrastLead": ["Data", "AI", "Product"]
+  },
+  "home": {
+    "tldr": "My approach is informed by my diverse experience, ranging from live improvised music to family studies. I bring this creative, empathic, and collaborative perspective to my work. I enjoy asking questions and uncovering unknowns to build solutions that make information and tasks easier to engage with.",
+    "shareDescription": "David Schraedel — Data, AI & Product in Utah.",
+    "skills": ["Python", "AWS", "SQL", "Docker", "Linux", "Terraform"]
+  },
+  "handshakeLine": "Working on something meaningful? I'd love to connect.",
+  "connect": {
+    "heading": "Let's connect",
+    "paragraphs": [
+      "Reach out if you want a second pair of eyes and ears, need someone to test a product, or are hiring for a role where you think I could make a difference.",
+      "I'm always open to unconventional ideas. Or maybe you're doing the same-old exceptionally? Would love to help with that too.",
+      "Send me a message via email or LinkedIn."
+    ]
+  },
+  "presence": {
+    "github": "https://github.com/davidschraedel",
+    "linkedin": "https://www.linkedin.com/in/david-schraedel",
+    "substack": "https://substack.com/@davidschraedel"
+  },
+  "projectsPage": {
+    "shareDescription": "Selected projects by David Schraedel, a technology professional with a multidisciplinary path from music to information systems."
+  },
+  "timeline": [
+    {
+      "start": "2015-04",
+      "label": "Earned Eagle Scout. The project required planning, leadership, follow-through, and sewing skills, supporting patients at the Intermountain Health Utah Valley Hospital."
+    },
+    {
+      "start": "2016-01",
+      "end": "2018-01",
+      "label": "Full-time Volunteer Representative for The Church of Jesus Christ of Latter-day Saints in Albuquerque, NM for two years. A peer later said he never heard me speak a scripted word. I was serious about being authentic, thinking for myself, and speaking the people's language. I was also thorough and responsible with my use and adoption of our new technology tools."
+    },
+    {
+      "start": "2019-04",
+      "end": "2023-04",
+      "label": "Joined Brigham Young University Department of Dance as a Contemporary Dance Accompanist, improvising live music for 15–75 dancers across 4 years using 13 instruments and music software."
+    },
+    {
+      "start": "2020-09",
+      "label": "I started my Bachelor of Science in Information Systems program at Brigham Young University. I deliberately chose an unfamiliar path to challenge myself. I took many opportunities to expand my perspective, such as studying abroad in the United Kingdom, Switzerland, and Italy, taking diverse elective courses, and earning a minor in Family Life."
+    },
+    {
+      "start": "2021-04",
+      "label": "At BYU College of Fine Arts and Communications, I built and maintained Arts websites for PR and inclusivity initiatives. I audited 50+ undocumented workflow files, diagnosed and planned for cleaning up 19% of their dead storage across 8 department sites, and trained my replacement."
+    },
+    {
+      "start": "2021-08",
+      "label": "As a Teaching Assistant at BYU Marriott, I helped 60 students with Python, PostgreSQL, Django, HTML/CSS, and OOP in labs and review sessions."
+    },
+    {
+      "start": "2022-01",
+      "label": "For a five-day INTEX project at BYU, I helped merge seven data sources, create user-facing logic and CRUD operations, debug and catch QA issues, and ship a working archaeological fieldwork app in C#, ASP.NET, and AWS."
+    },
+    {
+      "start": "2022-05",
+      "label": "I studied abroad across the United Kingdom, Switzerland, and Italy, where 30 students and I observed the strategy in everyday uses of technology and the progression of tech into the Fourth Industrial Revolution."
+    },
+    {
+      "start": "2022-09",
+      "label": "As a Consultant Intern on a social impact project for The Church of Jesus Christ of Latter-day Saints, I researched data sources for a world crisis information tool, brainstormed solution options with the team, and built a simple prototype to show the pros and cons of their intended and alternative approaches."
+    },
+    {
+      "start": "2023-04",
+      "label": "I graduated from BYU with a Bachelor of Science in Information Systems and received the IS Alumni Choice Award for living the Marriott School value of Integrity in Action."
+    },
+    {
+      "start": "2024-04",
+      "label": "As a Full Stack Development Intern at OCSC, I shipped 20+ full-stack changes to a production SaaS web app over six months working fewer hours than part-time."
+    },
+    {
+      "start": "2024-08",
+      "label": "At The LTN Foundation, I led development of a responsive React site, designed and normalized a relational database, and clarified the project's branding and goals for a clearer user experience."
+    },
+    {
+      "start": "2025-12",
+      "label": "I collaborated in a team that partnered with a local business to build and test LangChain AI agents that helped them work through strategic decisions and gain visibility into their point-of-sale data."
+    },
+    {
+      "start": "2025-09",
+      "label": "As a Data & Systems Teaching Assistant at BYU Marriott, I taught 50+ graduate students Excel statistics, Tableau, data lifecycle, and SQL; debugged student work across five languages in TA labs."
+    },
+    {
+      "start": "2025-11",
+      "label": "At the BYU Marriott Case Competition, our team's presentation of growth recommendations for an AI B2B client earned us Best of Room."
+    },
+    {
+      "start": "2026-04",
+      "label": "I earned my Master of Information Systems Management at BYU Marriott. Coursework included product management, agentic AI, data engineering (Python, dbt, Snowflake), data science (R, scikit-learn), and cloud engineering (AWS, Terraform)."
+    },
+    {
+      "start": "2026-05",
+      "label": "I built a Python pipeline that made 6.7M+ words of YouTube transcripts queryable and extractable for AI analysis."
+    },
+    {
+      "start": "2026-03",
+      "label": "For my BYU Marriott capstone, I built core functionality for I AM, a React app that helps content creators respond to their audience at scale while matching their own voice and brand."
+    },
+    {
+      "start": "2026-02",
+      "label": "In an applied AI group project, my team and I built MicroDeck, a Flutter habit-initiation app with user-authored micro-action cards and two-minute timers to help users start small without streaks or gamification. We developed rapidly with iterative design and testing, market research, user feedback, and agentic, spec-driven development workflows."
+    },
+    {
+      "start": "2026-07",
+      "label": "I built a Python script that auto-populates PowerPoint templates into print-ready photo books, replacing 30+ hours of manual work (~1,050 pages, 15 books) with 5–8 hours and cutting production cycle time by 15+ days."
+    }
+  ],
+  "projects": [
+    {
+      "id": "photo-book-generator",
+      "slug": "photo-book-generator",
+      "name": "Photo Book Generator",
+      "objective": "Building a 70-page family photo book in PowerPoint by hand takes a long time, and online photo book services are marginally easier with an increased price.",
+      "impact": "I built a Python script that builds templated PowerPoint pages, auto-fills photos, and outputs print-ready files, cutting 30+ hours of manual work on 15 books to 5–8 hours.",
+      "stack": ["Python", "Microsoft PowerPoint"],
+      "layout": "media-right",
+      "featured": false,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/photo-book-pptx-generator",
+      "previewImageKey": "photo-book-generator",
+      "previewAlt": "Auto-generated photo book pages in PowerPoint, via Python",
+      "videoUrl": null
+    },
+    {
+      "id": "youtube-transcript-pipeline",
+      "slug": "youtube-transcript-pipeline",
+      "name": "YouTube Transcript Pipeline",
+      "objective": "Hours of spoken content in YouTube playlists are locked in the UI and not queryable or exportable, and integrated tools like NotebookLM are limited in capability, control, and experience.",
+      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6M+ words of transcripts into a clean, queryable dataset that I can export for analysis.",
+      "stack": ["Python", "DuckDB", "SQL"],
+      "layout": "text-only",
+      "featured": true,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/youtube-transcript-pipeline",
+      "previewImageKey": "youtube-transcript-pipeline",
+      "previewAlt": "Data pipeline for YouTube transcript data",
+      "videoUrl": null
+    },
+    {
+      "id": "iam",
+      "slug": "iam",
+      "name": "Capstone Project - I AM",
+      "objective": "Content creators with a large audience struggle to connect with the whole of their audience on an individual level, and current solutions to this are robotic and impersonal.",
+      "impact": "I built and refined core features so creators can respond to an audience at scale while matching their own voice and brand, using social media integrations and Amazon Bedrock.",
+      "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
+      "layout": "media-right",
+      "featured": true,
+      "demoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk",
+      "githubUrl": null,
+      "previewImageKey": "iam",
+      "previewAlt": "I AM capstone demo video on YouTube",
+      "videoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk"
+    },
+    {
+      "id": "soundwatch",
+      "slug": "soundwatch",
+      "name": "Soundwatch",
+      "objective": "Morning routines with multiple timed activities require repeatedly starting timers or watching a clock.",
+      "impact": "I built a stopwatch that tracks elapsed time with interval audio cues to allow unhindered presence and focus.",
+      "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      "layout": "media-left",
+      "featured": true,
+      "demoUrl": "https://soundwatch.netlify.app/",
+      "githubUrl": "https://github.com/davidschraedel/stopwatch",
+      "previewImageKey": "soundwatch",
+      "previewAlt": "Soundwatch interval timer running in the browser",
+      "videoUrl": null
+    },
+    {
+      "id": "youtube-kpi-framework",
+      "slug": "youtube-kpi-framework",
+      "name": "YouTube KPI Framework",
+      "objective": "In product management coursework, I was tasked with building a KPI framework to measure a digital product's performance, focusing on valuable outcomes rather than outputs.",
+      "impact": "I built a KPI framework based on YouTube, prioritizing outcomes like engagement quality and creator value over vanity metrics like view count.",
+      "stack": ["Canva", "Product Management"],
+      "layout": "text-only",
+      "featured": false,
+      "demoUrl": "https://www.canva.com/design/DAG69PGZ5Uo/blz7EcwbksNU1IQpN-pL_Q/view?utm_content=DAG69PGZ5Uo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "githubUrl": null,
+      "previewImageKey": "youtube-kpi-framework",
+      "previewAlt": "KPI framework overview in Canva, for YouTube",
+      "videoUrl": null
+    },
+    {
+      "id": "microdeck",
+      "slug": "microdeck",
+      "name": "MicroDeck",
+      "objective": "Individuals with ADHD, executive dysfunction, or digital burnout struggle to bridge the intention-behavior gap; trackers and blockers often add friction instead of helping them start.",
+      "impact": "I built and refined core functionality for a minimalist mobile habit-initiation app with user-authored micro-action cards and 2-minute timers, avoiding streaks, history, and intoxicating gamification.",
+      "stack": ["Flutter", "Dart", "Agentic Development", "Cursor"],
+      "layout": "media-right",
+      "featured": false,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/maddiehutch1/MicroDeckApp",
+      "previewImageKey": "microdeck",
+      "previewAlt": "MicroDeck iOS habit initiation app concept",
+      "videoUrl": null
+    },
+    {
+      "id": "midi-morph",
+      "slug": "midi-morph",
+      "name": "Midi Randomizer",
+      "objective": "My music production tools lacked an easy way to get fresh, random MIDI patterns when I wanted unhinged creativity.",
+      "impact": "I built a browser-based MIDI randomizer that offers various parameters for intentional generation of unpredictable MIDI patterns, offering fast randomization external to usual human strengths.",
+      "stack": ["TypeScript", "HTML", "AI Studio", "Cursor", "Github"],
+      "layout": "media-left",
+      "featured": false,
+      "demoUrl": "https://davidschraedel.github.io/midi-morph-gui/",
+      "githubUrl": "https://github.com/davidschraedel/midi-morph-gui",
+      "previewImageKey": "midi-morph",
+      "previewAlt": "MIDI randomizer website",
+      "videoUrl": null
+    },
+    {
+      "id": "calendar-dashboard",
+      "slug": "calendar-dashboard",
+      "name": "Calendar Dashboard",
+      "objective": "I use separate calendars in Google Calendar to categorize events with time goals for each, but there's no built-in way to compare scheduled time against those goals, against unscheduled time, or across calendars.",
+      "impact": "I built a Google Apps Script automation that populates event durations in Sheets and feeds a Looker Studio dashboard where I can see time ratios by calendar and compare them to my scheduling goals.",
+      "stack": ["Google Apps Script", "Google Sheets", "Looker Studio"],
+      "layout": "text-only",
+      "featured": false,
+      "demoUrl": "https://datastudio.google.com/reporting/8ff7c15f-e20f-4436-8bce-302d6903a504",
+      "githubUrl": "https://github.com/davidschraedel/google-apps-script",
+      "previewImageKey": "calendar-dashboard",
+      "previewAlt": "Calendar time breakdown in Looker Studio",
+      "videoUrl": null
+    },
+    {
+      "id": "voice-first-portfolio",
+      "slug": "voice-first-portfolio",
+      "name": "Refactored Portfolio Website",
+      "objective": "I needed a simple portfolio that is easy to update and doesn't rely on complexity for interest or engagement.",
+      "impact": "I refactored an old React portfolio draft into Astro with a single json-based source of truth for content.",
+      "stack": ["Astro", "Tailwind CSS", "TypeScript", "GitHub Pages"],
+      "layout": "media-right",
+      "featured": false,
+      "demoUrl": "https://davidschraedel.github.io/portfolio/",
+      "githubUrl": "https://github.com/davidschraedel/portfolio",
+      "previewImageKey": "voice-first-portfolio",
+      "previewAlt": "Voice-first portfolio site homepage with featured projects grid",
+      "videoUrl": null
+    }
+  ]
+}
