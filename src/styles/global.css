@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  /* Legacy page shell */
+  --color-page-body: #756565;
+
+  /* Teal radial gradient (legacy .radial-gradient) */
+  --color-teal-fallback: #a8dad6;
+  --color-teal-center: #6db1bd;
+  --color-teal-edge: #33a1b4;
+
+  /* Frosted content cards (legacy .body_text / .header_text) */
+  --color-frosted-body: rgb(255 255 255 / 0.496);
+  --color-frosted-header: rgb(255 255 255 / 0.319);
+  --color-content-card: rgb(208 231 235 / 0.884);
+
+  /* Nav and footer hover (legacy .navA:hover / .footA:hover) */
+  --color-nav-hover: #007185;
+  --color-nav-active: #006a7c;
+  --color-nav-text-shadow: rgb(255 255 255 / 0.5);
+}
+
+@layer base {
+  html {
+    font-family: "Oxanium", cursive, system-ui, sans-serif;
+  }
+
+  body {
+    @apply min-h-screen bg-page-body antialiased;
+  }
+}
+
+@layer components {
+  .shell-gradient {
+    @apply bg-teal-fallback;
+    background-image: radial-gradient(
+      at center,
+      var(--color-teal-center),
+      var(--color-teal-edge)
+    );
+  }
+
+  .frosted-body {
+    @apply rounded-[15px] bg-frosted-body p-2.5 font-semibold;
+    box-shadow: 0 0 28px 4px white;
+  }
+
+  .frosted-header {
+    @apply rounded-[15px] bg-frosted-header p-3.5 font-semibold;
+    box-shadow: 0 0 28px 3px white;
+  }
+
+  .content-card {
+    @apply rounded-[15px] bg-content-card p-2.5 font-semibold;
+  }
+
+  .nav-hover {
+    @apply font-bold text-white transition-shadow;
+  }
+
+  .nav-hover:hover {
+    @apply shadow-[0_0_50px_2px_rgb(28_45_57/0.115)];
+    background-image: linear-gradient(
+      color-mix(in srgb, var(--color-nav-hover) 93%, transparent),
+      transparent
+    );
+    text-shadow: 0 0 10px var(--color-nav-text-shadow);
+  }
+
+  .nav-hover:active {
+    @apply shadow-[0_0_10px_1px_rgb(243_243_243/0.116)];
+    background-image: linear-gradient(
+      color-mix(in srgb, var(--color-nav-active) 93%, transparent),
+      rgb(183 221 226 / 0.12)
+    );
+    text-shadow: 0 0 10px rgb(255 255 255 / 0.58);
+  }
+}
