@@ -16,94 +16,140 @@ function isActive(segment: string) {
   }
   return pathname.includes(`/${segment}`);
 }
+
+const navLinks = [
+  { label: "Home", href: navHref("/"), active: isActive("") },
+  { label: "Projects", href: navHref("projects/"), active: isActive("projects") },
+  { label: "About", href: navHref("about/"), active: isActive("about") },
+];
 ---
 
-<nav class="relative" id="topPageNav" aria-label="Main">
-  <ul class="m-0 flex list-none items-center justify-between p-0">
-    <li>
-      <a
-        class="nav-hover"
-        href={navHref("/")}
-        aria-current={isActive("") ? "page" : undefined}
-      >
-        {person.name}
-      </a>
-    </li>
-    <li class="relative">
+<nav class="relative z-40" id="topPageNav" aria-label="Main">
+  <div class="flex items-center justify-between sm:grid sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+    <a
+      class="nav-hover min-w-0 shrink sm:justify-self-start"
+      href={navHref("/")}
+      aria-current={isActive("") ? "page" : undefined}
+    >
+      {person.name}
+    </a>
+
+    <div class="relative shrink-0 sm:hidden">
       <button
         type="button"
-        class="nav-hover cursor-pointer border-0 bg-transparent"
+        class="nav-toggle-btn"
         id="nav-toggle"
         aria-expanded="false"
-        aria-controls="nav-dropdown"
+        aria-controls="nav-menu-mobile"
         aria-label="Open navigation menu"
       >
-        <span id="nav-chevron" aria-hidden="true">▼</span>
+        <svg
+          class="nav-toggle-icon"
+          id="nav-icon-down"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M8 10l4 4 4-4"></path>
+        </svg>
+        <svg
+          class="nav-toggle-icon hidden"
+          id="nav-icon-up"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M8 14l4-4 4 4"></path>
+        </svg>
       </button>
-      <ul class="nav-dropdown m-0 list-none p-0" id="nav-dropdown">
-        <li>
-          <a
-            class="nav-hover"
-            href={navHref("/")}
-            aria-current={isActive("/") ? "page" : undefined}
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            class="nav-hover"
-            href={navHref("projects/")}
-            aria-current={isActive("projects") ? "page" : undefined}
-          >
-            Projects
-          </a>
-        </li>
-        <li>
-          <a
-            class="nav-hover"
-            href={navHref("about/")}
-            aria-current={isActive("about") ? "page" : undefined}
-          >
-            About
-          </a>
-        </li>
+
+      <ul class="nav-dropdown m-0 list-none p-0" id="nav-menu-mobile">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                class="nav-hover"
+                href={link.href}
+                aria-current={link.active ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
-    </li>
-  </ul>
-  <div class="h-12" id="nav-spacer"></div>
+    </div>
+
+    <ul
+      class="nav-menu m-0 hidden list-none p-0 sm:col-start-2 sm:row-start-1 sm:flex sm:justify-self-center"
+      id="nav-menu-desktop"
+    >
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              class="nav-hover"
+              href={link.href}
+              aria-current={link.active ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </nav>
 
 <script>
   const toggle = document.getElementById("nav-toggle");
-  const dropdown = document.getElementById("nav-dropdown");
-  const chevron = document.getElementById("nav-chevron");
-  const spacer = document.getElementById("nav-spacer");
+  const menu = document.getElementById("nav-menu-mobile");
+  const iconDown = document.getElementById("nav-icon-down");
+  const iconUp = document.getElementById("nav-icon-up");
 
-  if (toggle && dropdown && chevron && spacer) {
+  if (toggle && menu && iconDown && iconUp) {
     const btn = toggle;
-    const menu = dropdown;
-    const icon = chevron;
-    const fill = spacer;
+    const navMenu = menu;
+    const downIcon = iconDown;
+    const upIcon = iconUp;
+    const desktopQuery = window.matchMedia("(min-width: 640px)");
+
+    function isDesktop() {
+      return desktopQuery.matches;
+    }
 
     function closeDropdown() {
-      menu.classList.remove("open");
+      navMenu.classList.remove("open");
       btn.setAttribute("aria-expanded", "false");
       btn.setAttribute("aria-label", "Open navigation menu");
-      icon.textContent = "▼";
-      fill.style.display = "block";
+      downIcon.classList.remove("hidden");
+      upIcon.classList.add("hidden");
     }
 
     function openDropdown() {
-      menu.classList.add("open");
+      navMenu.classList.add("open");
       btn.setAttribute("aria-expanded", "true");
       btn.setAttribute("aria-label", "Close navigation menu");
-      icon.textContent = "▲";
-      fill.style.display = "none";
+      downIcon.classList.add("hidden");
+      upIcon.classList.remove("hidden");
     }
 
     btn.addEventListener("click", () => {
-      if (menu.classList.contains("open")) {
+      if (isDesktop()) return;
+
+      if (navMenu.classList.contains("open")) {
         closeDropdown();
       } else {
         openDropdown();
@@ -111,19 +157,27 @@ function isActive(segment: string) {
     });
 
     document.addEventListener("click", (event) => {
+      if (isDesktop()) return;
+
       if (
-        menu.classList.contains("open") &&
+        navMenu.classList.contains("open") &&
         !btn.contains(event.target as Node) &&
-        !menu.contains(event.target as Node)
+        !navMenu.contains(event.target as Node)
       ) {
         closeDropdown();
       }
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && menu.classList.contains("open")) {
+      if (event.key === "Escape" && navMenu.classList.contains("open") && !isDesktop()) {
         closeDropdown();
         btn.focus();
+      }
+    });
+
+    desktopQuery.addEventListener("change", () => {
+      if (isDesktop()) {
+        closeDropdown();
       }
     });
   }

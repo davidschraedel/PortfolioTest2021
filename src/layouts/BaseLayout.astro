@@ -12,6 +12,8 @@ const {
   title = "David Schraedel",
   description = "Developer portfolio",
 } = Astro.props;
+
+const signatureBgUrl = `${import.meta.env.BASE_URL}images/kenrick-mills-7Jfpy_ctV_c-unsplash.jpg`;
 ---
 
 <!doctype html>
@@ -29,7 +31,10 @@ const {
       rel="stylesheet"
     />
   </head>
-  <body class="shell-gradient">
+  <body
+    class="shell-gradient"
+    style={`--url-signature-bg: url('${signatureBgUrl}')`}
+  >
     <Nav />
     <main>
       <slot />
