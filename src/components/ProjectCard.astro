@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+
+import type { Project } from "../data/projects";
+
+type Props = Project;
+
+const project = Astro.props;
+const {
+  id,
+  name,
+  objective,
+  impact,
+  stack,
+  demoUrl,
+  githubUrl,
+  videoUrl,
+  previewImage,
+  previewAlt,
+} = project;
+
+const hasDemoLink = Boolean(demoUrl || videoUrl);
+const demoHref = demoUrl ?? videoUrl!;
+const demoCta = "Take a look";
+const hasGithub = Boolean(githubUrl);
+const previewHref = demoUrl ?? videoUrl ?? githubUrl ?? null;
+const previewLinkLabel = hasDemoLink ? demoCta : hasGithub ? "GitHub" : name;
+---
+
+<article class="content-shell mb-8 text-left" aria-labelledby={`project-${id}`}>
+  <h2 class="section-heading mb-4 text-center" id={`project-${id}`}>
+    <span class="section-heading-inner">{name}</span>
+  </h2>
+
+  <div class="flex flex-col items-center gap-6">
+    {
+      previewImage &&
+        (previewHref ? (
+          <a
+            class="project-image-link project-preview-frame focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-edge"
+            href={previewHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${previewLinkLabel}: ${name}`}
+          >
+            <Image
+              src={previewImage}
+              alt={previewAlt}
+              class="project-preview-image"
+              widths={[400, 600, 800, 1200]}
+              sizes="(max-width: 768px) 100vw, 28rem"
+            />
+          </a>
+        ) : (
+          <div class="project-preview-frame">
+            <Image
+              src={previewImage}
+              alt={previewAlt}
+              class="project-preview-image"
+              widths={[400, 600, 800, 1200]}
+              sizes="(max-width: 768px) 100vw, 28rem"
+            />
+          </div>
+        ))
+    }
+
+    <div class="w-full min-w-0">
+      <div class="body-copy body-copy-in-shell body-copy-photo-blur">
+        <p class="mb-4">{objective}</p>
+        <p>{impact}</p>
+
+        {
+          stack.length > 0 && (
+            <ul class="mb-4 flex flex-wrap justify-center gap-2" aria-label="Tech stack">
+              {stack.map((item: string) => (
+                <li>
+                  <span class="stack-tag">{item}</span>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+
+        {
+          (hasDemoLink || hasGithub) && (
+            <div class="flex flex-wrap justify-center gap-3">
+              {
+                hasDemoLink && (
+                  <a
+                    class="btn btn-soft btn-soft-default"
+                    href={demoHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {demoCta}
+                  </a>
+                )
+              }
+              {
+                hasGithub && (
+                  <a
+                    class="btn btn-soft btn-github"
+                    href={githubUrl!}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                )
+              }
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</article>

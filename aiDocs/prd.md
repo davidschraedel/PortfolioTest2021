@@ -112,12 +112,12 @@ The site tells one story in four content beats. **Layout is flexible** — singl
 
 **Hook → Story → Projects → Contact**
 
-| Beat     | Content from `profile.json`                                                                  |
-| -------- | -------------------------------------------------------------------------------------------- |
-| Hook     | `hero.contrastLead`, `hero.professionalSentence`, `person.name`                              |
-| Story    | `about.paragraphs`, `about.heading`, `timeline`                                              |
-| Projects | All entries where `featured: true` — Problem, Solution, stack, outbound links                |
-| Contact  | `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack` |
+| Beat     | Content from `profile.json`                                                                                                                    |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hook     | `hero.contrastLead`, `hero.professionalSentence`, `person.name`                                                                                |
+| Story    | `about.paragraphs`, `about.heading`, `timeline`                                                                                                |
+| Projects | Home: `featured: true` only. `/projects/`: **all** projects — objective, impact, stack, outbound links                                         | See **`featured` field** below |
+| Contact  | Home only: `connect.heading`, `connect.paragraphs`, Email + LinkedIn buttons. Footer: resume, email copy, LinkedIn, GitHub, Substack site-wide |
 
 Navigation labels and page structure may vary by design.
 
@@ -137,17 +137,19 @@ Navigation labels and page structure may vary by design.
 - `about.paragraphs` and `about.heading` available on the site
 - `timeline` as a chronological list — credentials interleaved with human details
 
-**3. Featured projects**
+**3. Projects**
 
-- All projects with `featured: true` in `profile.json` (count is dynamic)
-- Each card shows **Problem** and **Solution** (sourced from `objective` and `tradeOff` in JSON)
-- Stack tags per project
-- Live demo and GitHub links when URLs are set in `profile.json`
+- **`featured` field:** `true` = show on the **home** page featured section. Does **not** limit the projects page.
+- **`/projects/`** lists every project in `profile.json`.
+- Each card displays `objective` and `impact` (no separate Problem/Solution labels).
+- Stack tags per project.
+- Live demo and GitHub links when URLs are set in `profile.json`.
+- Preview image opens the demo link in a new tab when `demoUrl` or `videoUrl` is set.
 
 **4. Contact and links**
 
-- Resume PDF reachable from the site
-- Email, LinkedIn, GitHub, and Substack links reachable without hunting (`person.email`, `person.resume`, `presence.*`)
+- **Home page:** `connect` copy with Email and LinkedIn buttons only (matches the “send me a message via email or LinkedIn” CTA).
+- **Footer (all pages):** resume, email, email copy, LinkedIn, GitHub, Substack.
 - No contact forms
 
 **5. Stack and deploy**
@@ -176,7 +178,7 @@ Navigation labels and page structure may vary by design.
 _As a recruiter with 60 seconds, I want role, stack, and real projects immediately, so I can decide whether to advance this profile._
 
 - Professional sentence signals role/domain/stack without reading paragraphs
-- Featured projects visible with stack tags and demo/GitHub links where available
+- Projects visible with stack tags and demo/GitHub links where available
 - No tutorial clones in featured set
 
 **US-02 — Hiring manager depth**  
@@ -203,7 +205,7 @@ _As a recruiter on my phone, I want a readable layout._
 **US-06 — GitHub credibility**  
 _As a hiring manager, I want clean repos with meaningful history._
 
-- Featured repos meet anti-pattern commit thresholds
+- Visible repos meet anti-pattern commit thresholds
 - GitHub accessible from the site and project cards
 
 **US-07 — Stack relevance**  

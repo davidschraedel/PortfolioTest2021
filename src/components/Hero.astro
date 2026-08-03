@@ -1,0 +1,21 @@
+---
+import { hero, heroProfessionalSentence, person } from "../data/site";
+
+interface Props {
+  heading?: string;
+}
+
+const { heading = person.name } = Astro.props;
+const lead = hero.contrastLead.join(", ");
+---
+
+<section class="px-4 py-8" aria-labelledby="hero-heading">
+  <h1 class="hero-badge" id="hero-heading">
+    <span class="frosted-header">{heading}</span>
+  </h1>
+
+  <div class="content-shell mt-10">
+    <p class="body-copy body-copy-in-shell text-center text-lg font-bold">{lead}</p>
+    <p class="body-copy body-copy-in-shell">{heroProfessionalSentence}</p>
+  </div>
+</section>

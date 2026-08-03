@@ -1,0 +1,98 @@
+---
+import ChevronCircle from "./ChevronCircle.astro";
+import { person, presence, resumePath } from "../data/site";
+---
+
+<footer class="footer-shell px-4 pb-6 text-sm sm:text-base">
+  <ul class="footer-links m-0 flex list-none flex-wrap items-center justify-center gap-1 p-0">
+    <li class="relative">
+      <button
+        type="button"
+        class="foot-hover foot-hover-email cursor-pointer border-0 bg-transparent"
+        id="email-copy"
+        data-email={person.email}
+      >
+        Email
+      </button>
+      <span class="email-tooltip" id="email-tooltip" role="status">Copy email address</span>
+    </li>
+    <li>
+      <a class="foot-hover" href={resumePath} target="_blank" rel="noopener noreferrer">
+        Resume
+      </a>
+    </li>
+    <li>
+      <a
+        class="foot-hover btn-linkedin"
+        href={presence.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+    </li>
+    <li>
+      <a
+        class="foot-hover btn-github"
+        href={presence.github}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </li>
+    <li>
+      <a
+        class="foot-hover btn-substack"
+        href={presence.substack}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Substack
+      </a>
+    </li>
+  </ul>
+  <p class="footer-copyright m-0 mt-3">&copy; 2026 David Schraedel</p>
+</footer>
+
+<script>
+  const copyBtn = document.getElementById("email-copy");
+  const tooltip = document.getElementById("email-tooltip");
+
+  if (copyBtn && tooltip) {
+    const defaultText = tooltip.textContent ?? "Copy email address";
+
+    copyBtn.addEventListener("click", async () => {
+      const email = copyBtn.getAttribute("data-email");
+      if (!email) return;
+
+      try {
+        await navigator.clipboard.writeText(email);
+        tooltip.textContent = "Email copied";
+        tooltip.classList.add("visible");
+      } catch {
+        tooltip.textContent = "Copy failed";
+        tooltip.classList.add("visible");
+      }
+    });
+
+    copyBtn.addEventListener("mouseenter", () => {
+      tooltip.textContent = defaultText;
+      tooltip.classList.add("visible");
+    });
+
+    copyBtn.addEventListener("mouseleave", () => {
+      tooltip.textContent = defaultText;
+      tooltip.classList.remove("visible");
+    });
+
+    copyBtn.addEventListener("focus", () => {
+      tooltip.textContent = defaultText;
+      tooltip.classList.add("visible");
+    });
+
+    copyBtn.addEventListener("blur", () => {
+      tooltip.classList.remove("visible");
+    });
+  }
+</script>

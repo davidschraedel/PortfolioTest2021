@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactLinks from "../components/ContactLinks.astro";
+import Hero from "../components/Hero.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { featuredProjects } from "../data/projects";
+import { home, person } from "../data/site";
+---
+
+<BaseLayout title={person.name} description={home.shareDescription}>
+  <Hero />
+
+  <section class="px-4 py-8" aria-labelledby="featured-heading">
+    <h2 class="section-heading mb-6" id="featured-heading">
+      <span class="section-heading-inner">Featured projects</span>
+    </h2>
+
+    {
+      featuredProjects.map((project) => (
+        <ProjectCard {...project} />
+      ))
+    }
+  </section>
+
+  <ContactLinks />
+</BaseLayout>

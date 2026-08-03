@@ -1,2 +1,3 @@
 # PortfolioTest2021
-Django 2021 - portfolio experiment
+
+extracted styles from a Django 2021 portfolio draft

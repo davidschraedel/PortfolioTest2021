@@ -59,14 +59,14 @@ import { default as Hero } from "../components/Hero.astro";
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { projects } from "../data/projects";
+import { featuredProjects, projects } from "../data/projects";
 
-const featured = projects.filter((p) => p.featured);
+// Home: featuredProjects. Projects page: projects (all entries).
 ---
 
 <BaseLayout title="Page title">
   <section class="py-20">
-    {featured.map((project) => (
+    {featuredProjects.map((project) => (
       <ProjectCard {...project} />
     ))}
   </section>

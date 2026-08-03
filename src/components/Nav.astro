@@ -1,0 +1,161 @@
+---
+import ChevronCircle from "./ChevronCircle.astro";
+import { person } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
+
+function navHref(path: string) {
+  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+  if (!path || path === "/") {
+    return normalizedBase;
+  }
+  const segment = path.startsWith("/") ? path.slice(1) : path;
+  return `${normalizedBase}${segment}`;
+}
+
+const pathname = Astro.url.pathname;
+
+function isActive(segment: string) {
+  if (!segment) {
+    return pathname === base || pathname === `${base}/` || pathname.endsWith("/index.html");
+  }
+  return pathname.includes(`/${segment}`);
+}
+
+const navLinks = [
+  { label: "Home", href: navHref("/"), active: isActive("") },
+  { label: "Projects", href: navHref("projects/"), active: isActive("projects") },
+  { label: "About", href: navHref("about/"), active: isActive("about") },
+];
+---
+
+<nav class="nav-bar" id="topPageNav" aria-label="Main">
+  <div class="flex items-center justify-between sm:grid sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+    <a
+      class="nav-hover min-w-0 shrink sm:justify-self-start"
+      href={navHref("/")}
+      aria-current={isActive("") ? "page" : undefined}
+    >
+      {person.name}
+    </a>
+
+    <div class="relative shrink-0 sm:hidden">
+      <button
+        type="button"
+        class="nav-toggle-btn"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu-mobile"
+        aria-label="Open navigation menu"
+      >
+        <ChevronCircle direction="down" id="nav-icon-down" />
+        <ChevronCircle direction="up" class="nav-toggle-icon hidden" id="nav-icon-up" />
+      </button>
+
+      <ul class="nav-dropdown m-0 list-none p-0" id="nav-menu-mobile">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                class="nav-hover"
+                href={link.href}
+                aria-current={link.active ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <ul
+      class="nav-menu m-0 hidden list-none p-0 sm:col-start-2 sm:row-start-1 sm:flex sm:justify-self-center"
+      id="nav-menu-desktop"
+    >
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              class="nav-hover"
+              href={link.href}
+              aria-current={link.active ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu-mobile");
+  const iconDown = document.getElementById("nav-icon-down");
+  const iconUp = document.getElementById("nav-icon-up");
+
+  if (toggle && menu && iconDown && iconUp) {
+    const btn = toggle;
+    const navMenu = menu;
+    const downIcon = iconDown;
+    const upIcon = iconUp;
+    const desktopQuery = window.matchMedia("(min-width: 640px)");
+
+    function isDesktop() {
+      return desktopQuery.matches;
+    }
+
+    function closeDropdown() {
+      navMenu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Open navigation menu");
+      downIcon.classList.remove("hidden");
+      upIcon.classList.add("hidden");
+    }
+
+    function openDropdown() {
+      navMenu.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+      btn.setAttribute("aria-label", "Close navigation menu");
+      downIcon.classList.add("hidden");
+      upIcon.classList.remove("hidden");
+    }
+
+    btn.addEventListener("click", () => {
+      if (isDesktop()) return;
+
+      if (navMenu.classList.contains("open")) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (isDesktop()) return;
+
+      if (
+        navMenu.classList.contains("open") &&
+        !btn.contains(event.target as Node) &&
+        !navMenu.contains(event.target as Node)
+      ) {
+        closeDropdown();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && navMenu.classList.contains("open") && !isDesktop()) {
+        closeDropdown();
+        btn.focus();
+      }
+    });
+
+    desktopQuery.addEventListener("change", () => {
+      if (isDesktop()) {
+        closeDropdown();
+      }
+    });
+  }
+</script>

@@ -17,13 +17,13 @@ The site also needs to sound like a real person, not a LinkedIn summary. Those g
 
 The minimum set required for a successful portfolio launch:
 
-| #     | What                                                                                                     | Why it's minimum                            |
-| ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
-| **A** | **Hero** — `contrastLead` + `professionalSentence` from `profile.json`                                   | First impression; signals role/stack/domain |
-| **B** | **Story** — `about` paragraphs + `timeline`                                                              | Voice and background beyond a headline      |
-| **C** | **Featured projects** — all `featured: true` entries with Problem, Solution, stack, demo/GitHub when set | What recruiters evaluate in 60s             |
-| **D** | **Contact links** — resume, email, LinkedIn, GitHub, Substack from `profile.json`                        | Reachable without hunting                   |
-| **E** | **`profile.json`** — single content source; agents do not edit it                                        | One place for all copy and facts            |
+| #     | What                                                                                                                                        | Why it's minimum                            |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| **A** | **Hero** — `contrastLead` + `professionalSentence` from `profile.json`                                                                      | First impression; signals role/stack/domain |
+| **B** | **Story** — `about` paragraphs + `timeline`                                                                                                 | Voice and background beyond a headline      |
+| **C** | **Projects** — home shows `featured: true` entries; `/projects/` shows **all** projects with objective, impact, stack, demo/GitHub when set | What recruiters evaluate in 60s             |
+| **D** | **Contact** — home page “Let’s connect” with Email + LinkedIn; resume/email/GitHub/Substack in footer site-wide                             | Reachable without hunting                   |
+| **E** | **`profile.json`** — single content source; agents do not edit it                                                                           | One place for all copy and facts            |
 
 **Not required for launch:** dedicated case study depth, `handshakeLine` on the site, JSON-LD, on-site blog, Substack post cards, RSS sync, analytics, chatbot.
 
@@ -84,4 +84,4 @@ Don't send to real recruiters until all 3 pass the hard criteria.
 
 ## MVP in one sentence
 
-**A deployed Astro site driven by `profile.json` — hero copy, about + timeline, featured projects with Problem/Solution and stack, contact links reachable, and a professional unique design.**
+**A deployed Astro site driven by `profile.json` — hero copy, about + timeline, featured projects on home (all projects on `/projects/`), contact links reachable, and a professional unique design.**

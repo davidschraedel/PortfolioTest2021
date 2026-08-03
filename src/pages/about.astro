@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Timeline from "../components/Timeline.astro";
+import { about, headshotImage, person, timeline } from "../data/site";
+---
+
+<BaseLayout title={`About — ${person.name}`} description={about.shareDescription}>
+  <section class="px-4 py-8" aria-labelledby="about-heading">
+    <h1 class="hero-badge" id="about-heading">
+      <span class="frosted-header">{about.heading}</span>
+    </h1>
+
+    <Image
+      src={headshotImage}
+      alt={person.name}
+      class="headshot mt-10"
+      widths={[300, 500, 700]}
+      sizes="(max-width: 600px) 83vw, 500px"
+    />
+
+    <p class="body-copy mx-auto mt-10 max-w-2xl text-center font-bold">{about.tldr}</p>
+
+    <div class="content-shell mt-6">
+      <div class="body-copy body-copy-in-shell body-copy-photo-blur text-left">
+        {
+          about.paragraphs.map((paragraph) => (
+            <p class="mb-4 last:mb-0">{paragraph}</p>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-8">
+    <Timeline entries={timeline} />
+  </section>
+</BaseLayout>

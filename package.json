@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-test2021",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "dev:legacy": "serve legacy -p 4322",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "astro check",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.7.10"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@tailwindcss/vite": "^4.1.4",
+    "serve": "^14.2.4",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.8.3"
+  }
+}
