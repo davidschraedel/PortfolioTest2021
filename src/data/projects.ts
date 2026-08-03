@@ -1,7 +1,7 @@
 import type { ImageMetadata } from "astro";
 
 import calendarDashboard from "../assets/portfolio/calendar-dashboard.png";
-import iam from "../assets/portfolio/iam-demo-video.png";
+import iam from "../assets/portfolio/iam.png";
 import microdeck from "../assets/portfolio/microdeck.png";
 import midiMorph from "../assets/portfolio/midi-morph.png";
 import soundwatch from "../assets/portfolio/soundwatch.png";

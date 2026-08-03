@@ -116,7 +116,7 @@ The site tells one story in four content beats. **Layout is flexible** — singl
 | -------- | -------------------------------------------------------------------------------------------- |
 | Hook     | `hero.contrastLead`, `hero.professionalSentence`, `person.name`                              |
 | Story    | `about.paragraphs`, `about.heading`, `timeline`                                              |
-| Projects | All entries where `featured: true` — Problem, Solution, stack, outbound links                |
+| Projects | All projects — Problem, Solution, stack, outbound links                                      |
 | Contact  | `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack` |
 
 Navigation labels and page structure may vary by design.
@@ -137,10 +137,10 @@ Navigation labels and page structure may vary by design.
 - `about.paragraphs` and `about.heading` available on the site
 - `timeline` as a chronological list — credentials interleaved with human details
 
-**3. Featured projects**
+**3. Projects**
 
-- All projects with `featured: true` in `profile.json` (count is dynamic)
-- Each card shows **Problem** and **Solution** (sourced from `objective` and `tradeOff` in JSON)
+- All projects in `profile.json`
+- Each card displays the problem and solution (sourced from `objective` and `impact` in JSON)
 - Stack tags per project
 - Live demo and GitHub links when URLs are set in `profile.json`
 
@@ -176,7 +176,7 @@ Navigation labels and page structure may vary by design.
 _As a recruiter with 60 seconds, I want role, stack, and real projects immediately, so I can decide whether to advance this profile._
 
 - Professional sentence signals role/domain/stack without reading paragraphs
-- Featured projects visible with stack tags and demo/GitHub links where available
+- Projects visible with stack tags and demo/GitHub links where available
 - No tutorial clones in featured set
 
 **US-02 — Hiring manager depth**  
@@ -203,7 +203,7 @@ _As a recruiter on my phone, I want a readable layout._
 **US-06 — GitHub credibility**  
 _As a hiring manager, I want clean repos with meaningful history._
 
-- Featured repos meet anti-pattern commit thresholds
+- Visible repos meet anti-pattern commit thresholds
 - GitHub accessible from the site and project cards
 
 **US-07 — Stack relevance**  
