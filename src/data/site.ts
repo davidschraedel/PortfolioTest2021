@@ -26,3 +26,10 @@ export const timeline = profile.timeline;
 export const resumePath = `${BASE_URL}${person.resume}`;
 
 export const headshotImage = headshot;
+
+/** Hero subtitle; falls back to `home.tldr` when profile.json omits `professionalSentence`. */
+export const heroProfessionalSentence =
+  "professionalSentence" in hero &&
+  typeof hero.professionalSentence === "string"
+    ? hero.professionalSentence
+    : home.tldr;

@@ -155,7 +155,7 @@
       "slug": "youtube-transcript-pipeline",
       "name": "YouTube Transcript Pipeline",
       "objective": "Hours of spoken content in YouTube playlists are locked in the UI and not queryable or exportable, and integrated tools like NotebookLM are limited in capability, control, and experience.",
-      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6M+ words of transcripts into a clean, queryable dataset that I can export for analysis.",
+      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6M+ words of transcripts into a clean, queryable dataset for analysis.",
       "stack": ["Python", "DuckDB", "SQL"],
       "layout": "text-only",
       "featured": true,

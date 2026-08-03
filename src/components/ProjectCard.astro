@@ -1,0 +1,121 @@
+---
+import { Image } from "astro:assets";
+
+import type { Project } from "../data/projects";
+
+type Props = Project;
+
+function demoLabel(demoUrl: string, videoUrl: string | null): string {
+  if (videoUrl) return "Watch demo";
+  if (/youtube\.com|youtu\.be/i.test(demoUrl)) return "Watch demo";
+  if (/canva\.com/i.test(demoUrl)) return "View deck";
+  if (/datastudio\.google\.com|lookerstudio/i.test(demoUrl)) return "View dashboard";
+  return "Live demo";
+}
+
+const project = Astro.props;
+const {
+  id,
+  name,
+  objective,
+  impact,
+  stack,
+  demoUrl,
+  githubUrl,
+  videoUrl,
+  previewImage,
+  previewAlt,
+  layout,
+} = project;
+
+const hasDemo = Boolean(demoUrl);
+const hasGithub = Boolean(githubUrl);
+const demoCta = hasDemo ? demoLabel(demoUrl!, videoUrl) : "";
+const imageFirst = layout === "media-left";
+const imageLast = layout === "media-right";
+const showImage = previewImage && layout !== "text-only";
+---
+
+<article class="content-shell mb-8 text-left" aria-labelledby={`project-${id}`}>
+  <h2 class="frosted-header mb-4 text-center text-xl" id={`project-${id}`}>
+    {name}
+  </h2>
+
+  <div
+    class:list={[
+      "flex flex-col gap-6",
+      showImage && (imageFirst || imageLast) && "md:flex-row md:items-start",
+      showImage && imageLast && "md:flex-row-reverse",
+    ]}
+  >
+    {
+      showImage && previewImage && (
+        <div class="mx-auto shrink-0 md:w-2/5">
+          <Image
+            src={previewImage}
+            alt={previewAlt}
+            class="w-full rounded-[15px] shadow-[0_0_28px_4px_white]"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 40vw"
+          />
+        </div>
+      )
+    }
+
+    <div class="min-w-0 flex-1">
+      <div class="body-copy w-full max-w-none">
+        <p>
+          <span class="font-bold">Problem:</span> {objective}
+        </p>
+      </div>
+      <div class="body-copy w-full max-w-none">
+        <p>
+          <span class="font-bold">Solution:</span> {impact}
+        </p>
+      </div>
+
+      {
+        stack.length > 0 && (
+          <ul class="mb-4 flex flex-wrap justify-center gap-2 md:justify-start" aria-label="Tech stack">
+            {stack.map((item: string) => (
+              <li>
+                <span class="stack-tag">{item}</span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+
+      {
+        (hasDemo || hasGithub) && (
+          <div class="flex flex-wrap justify-center gap-3 md:justify-start">
+            {
+              hasDemo && (
+                <a
+                  class="btn btn-soft btn-soft-default"
+                  href={demoUrl!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {demoCta}
+                </a>
+              )
+            }
+            {
+              hasGithub && (
+                <a
+                  class="btn btn-soft btn-github"
+                  href={githubUrl!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              )
+            }
+          </div>
+        )
+      }
+    </div>
+  </div>
+</article>

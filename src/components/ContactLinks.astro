@@ -1,0 +1,30 @@
+---
+import { connect, person, presence, resumePath } from "../data/site";
+---
+
+<section class="content-shell my-8" aria-labelledby="contact-heading">
+  <h2 class="frosted-header mb-4 inline-block text-xl" id="contact-heading">
+    {connect.heading}
+  </h2>
+
+  {
+    connect.paragraphs.map((paragraph) => (
+      <p class="body-copy w-full max-w-none text-center">{paragraph}</p>
+    ))
+  }
+
+  <div class="flex flex-wrap justify-center gap-3">
+    
+    <a class="btn btn-soft btn-gmail" href={`mailto:${person.email}`}>
+      Email
+    </a>
+    <a
+      class="btn btn-soft btn-linkedin"
+      href={presence.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LinkedIn
+    </a>
+  </div>
+</section>

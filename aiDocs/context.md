@@ -2,9 +2,9 @@
 
 Personal developer portfolio — recruiter-scannable and voice-first. One-line pitch: [description.md](./description.md)
 
-**Status:** P2 complete — data layer in `src/data/`; assets in `src/assets/` and `public/`; ready for P3 pages and UI. Active roadmap: [2026-07-01_portfolio-astro-refactor_roadmap.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_roadmap.md) · Plan: [2026-07-01_portfolio-astro-refactor_plan.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_plan.md) · Analysis: [project-starting-state.md](../ai/notes/project-starting-state.md)
+**Status:** P3 complete — MVP pages and UI implemented. Active roadmap: [2026-07-01_portfolio-astro-refactor_roadmap.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_roadmap.md) · Plan: [2026-07-01_portfolio-astro-refactor_plan.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_plan.md) · Analysis: [project-starting-state.md](../ai/notes/project-starting-state.md)
 
-**Post-MVP (not blocking launch):** Case study routes can exist as “coming soon” stubs; `handshakeLine` is in data but not rendered; PRD nice-to-haves (JSON-LD, sitemap, analytics, etc.) not built. Hero and about copy still need cold-read validation before recruiter outreach — see [mvp.md](./mvp.md) §5.
+**Post-MVP (not blocking launch):** Case study routes can exist as “coming soon” stubs; `handshakeLine` is in data but not rendered; PRD nice-to-haves (JSON-LD, sitemap, analytics, etc.) not built. **Before recruiter outreach:** add `hero.professionalSentence` to `profile.json` (adapter currently falls back to `home.tldr`) — see [mvp.md](./mvp.md) §5.
 
 **Product docs:** [prd.md](./prd.md) v3.2 · [mvp.md](./mvp.md) v2.2 · Content model: `src/data/profile.json` (single source of truth; import via `site.ts` / `projects.ts` only)
 

@@ -1,9 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactLinks from "../components/ContactLinks.astro";
+import Hero from "../components/Hero.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { featuredProjects } from "../data/projects";
+import { home, person } from "../data/site";
 ---
 
-<BaseLayout title="David Schraedel" description="Developer portfolio">
-  <main class="flex min-h-screen items-center justify-center px-6 py-20">
-    <p class="frosted-body text-center text-lg">Portfolio scaffold — pages coming in P3.</p>
-  </main>
+<BaseLayout title={person.name} description={home.shareDescription}>
+  <Hero />
+
+  <section class="px-4 py-8" aria-labelledby="featured-heading">
+    <h2 class="frosted-header mb-6 inline-block text-xl" id="featured-heading">
+      Featured projects
+    </h2>
+
+    {
+      featuredProjects.map((project) => (
+        <ProjectCard {...project} />
+      ))
+    }
+  </section>
+
+  <ContactLinks />
 </BaseLayout>

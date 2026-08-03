@@ -26,7 +26,7 @@
   }
 
   body {
-    @apply min-h-screen bg-page-body antialiased;
+    @apply min-h-screen bg-page-body text-center antialiased;
   }
 }
 
@@ -54,8 +54,26 @@
     @apply rounded-[15px] bg-content-card p-2.5 font-semibold;
   }
 
+  .content-shell {
+    @apply mx-auto w-[80%] max-w-4xl rounded-[5px] bg-content-card px-4 py-6 sm:w-[60%];
+  }
+
+  .hero-badge {
+    @apply inline-block rounded-[15px] px-[18px] py-[7px] text-[7.75vw] font-semibold shadow-[0_0_40px_10px_rgb(242_236_236/0.616)] sm:text-[47px];
+    background-color: rgb(123 239 241 / 0.502);
+  }
+
+  .headshot {
+    @apply mx-auto max-w-full rounded-[10vw] shadow-[0_0_40px_10px_rgb(228_217_217/0.672)] sm:w-[500px];
+  }
+
+  .section-divider {
+    @apply mx-auto my-8 h-0.5 max-w-4xl px-0.5 shadow-[0_0_40px_10px_rgb(242_236_236/0.616)];
+    background-image: linear-gradient(#aed9df1e, #d8d8d849);
+  }
+
   .nav-hover {
-    @apply font-bold text-white transition-shadow;
+    @apply block px-[30px] py-5 font-bold text-white no-underline transition-shadow;
   }
 
   .nav-hover:hover {
@@ -74,5 +92,95 @@
       rgb(183 221 226 / 0.12)
     );
     text-shadow: 0 0 10px rgb(255 255 255 / 0.58);
+  }
+
+  .foot-hover {
+    @apply inline-block px-10 py-[23px] font-bold text-white no-underline transition-shadow;
+  }
+
+  .foot-hover:hover {
+    @apply shadow-[0_0_50px_2px_rgb(28_45_57/0.115)];
+    background-image: linear-gradient(
+      transparent,
+      color-mix(in srgb, var(--color-nav-hover) 17%, transparent)
+    );
+    text-shadow: 0 0 10px var(--color-nav-text-shadow);
+  }
+
+  .foot-hover:active {
+    @apply shadow-[0_0_10px_1px_rgb(243_243_243/0.116)];
+    background-image: linear-gradient(
+      rgb(183 221 226 / 0.12),
+      color-mix(in srgb, var(--color-nav-active) 93%, transparent)
+    );
+    text-shadow: 0 0 10px rgb(255 255 255 / 0.58);
+  }
+
+  .body-copy {
+    @apply mx-auto mb-4 w-[60vw] max-w-2xl rounded-[15px] bg-frosted-body p-2.5 text-left text-base font-semibold leading-relaxed sm:w-[50vw];
+    box-shadow: 0 0 28px 4px white;
+  }
+
+  .nav-dropdown {
+    @apply absolute top-full right-0 z-10 hidden min-w-40 shadow-[0_8px_16px_0_rgb(0_0_0/0.2)];
+  }
+
+  .nav-dropdown.open {
+    @apply block;
+  }
+
+  .nav-dropdown .nav-hover {
+    @apply text-left;
+  }
+
+  .stack-tag {
+    @apply inline-block rounded-full bg-white/60 px-3 py-1 text-sm font-semibold text-page-body;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 min-w-11 items-center justify-center rounded-[18px] px-6 py-2.5 text-sm font-bold no-underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+
+  .btn-soft {
+    @apply text-page-body focus-visible:outline-teal-edge;
+  }
+
+  .btn-soft-default {
+    @apply hover:bg-nav-hover hover:text-white;
+  }
+
+  .btn-footer {
+    @apply text-white mix-blend-soft-light hover:mix-blend-normal;
+  }
+
+  .btn-linkedin {
+    @apply hover:bg-[#0077b5] hover:text-white;
+  }
+
+  .btn-github {
+    @apply hover:bg-[#24292e] hover:text-white;
+  }
+
+  .btn-substack {
+    @apply hover:bg-[#ff6719] hover:text-white;
+  }
+
+  .btn-gmail {
+    @apply hover:bg-[#ea4335] hover:text-white;
+  }
+
+  .email-tooltip {
+    @apply invisible absolute bottom-[110%] left-1/2 z-10 -ml-[75px] w-[130px] rounded-[7px] bg-[rgb(64_69_72/0.966)] px-1.5 py-1.5 text-center text-sm font-bold text-white opacity-0 shadow-[0_0_40px_10px_rgb(242_236_236/0.616)] transition-opacity;
+    text-shadow: 1px 0.5px 0.95px rgb(0 0 0 / 0.25);
+  }
+
+  .email-tooltip.visible {
+    @apply visible opacity-100;
+  }
+
+  .email-tooltip::after {
+    content: "";
+    @apply absolute top-full left-1/2 -ml-[5px] border-[5px] border-solid;
+    border-color: rgb(231 238 241 / 0.531) transparent transparent transparent;
   }
 }

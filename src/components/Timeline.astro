@@ -1,0 +1,44 @@
+---
+import type { TimelineEntry } from "../data/site";
+
+interface Props {
+  entries: TimelineEntry[];
+}
+
+const { entries } = Astro.props;
+
+const sorted = [...entries].sort((a, b) => a.start.localeCompare(b.start));
+
+function formatDate(value: string) {
+  const [year, month] = value.split("-");
+  const date = new Date(Number(year), Number(month) - 1);
+  return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
+
+function formatRange(entry: TimelineEntry) {
+  const start = formatDate(entry.start);
+  if ("end" in entry && entry.end) {
+    return `${start} – ${formatDate(entry.end)}`;
+  }
+  return start;
+}
+---
+
+<section aria-labelledby="timeline-heading">
+  <h2 class="frosted-header mx-auto mb-6 inline-block text-xl" id="timeline-heading">
+    Timeline
+  </h2>
+
+  <ol class="mx-auto max-w-2xl list-none space-y-4 p-0 text-left">
+    {
+      sorted.map((entry) => (
+        <li class="body-copy w-full max-w-none">
+          <time class="mb-1 block text-sm font-bold text-nav-hover" datetime={entry.start}>
+            {formatRange(entry)}
+          </time>
+          <p>{entry.label}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

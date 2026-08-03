@@ -1,0 +1,130 @@
+---
+import { person } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
+
+function navHref(path: string) {
+  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+  return path ? `${normalizedBase}${path}` : normalizedBase.slice(0, -1) || "/";
+}
+
+const pathname = Astro.url.pathname;
+
+function isActive(segment: string) {
+  if (!segment) {
+    return pathname === base || pathname === `${base}/` || pathname.endsWith("/index.html");
+  }
+  return pathname.includes(`/${segment}`);
+}
+---
+
+<nav class="relative" id="topPageNav" aria-label="Main">
+  <ul class="m-0 flex list-none items-center justify-between p-0">
+    <li>
+      <a
+        class="nav-hover"
+        href={navHref("/")}
+        aria-current={isActive("") ? "page" : undefined}
+      >
+        {person.name}
+      </a>
+    </li>
+    <li class="relative">
+      <button
+        type="button"
+        class="nav-hover cursor-pointer border-0 bg-transparent"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-dropdown"
+        aria-label="Open navigation menu"
+      >
+        <span id="nav-chevron" aria-hidden="true">▼</span>
+      </button>
+      <ul class="nav-dropdown m-0 list-none p-0" id="nav-dropdown">
+        <li>
+          <a
+            class="nav-hover"
+            href={navHref("/")}
+            aria-current={isActive("/") ? "page" : undefined}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-hover"
+            href={navHref("projects/")}
+            aria-current={isActive("projects") ? "page" : undefined}
+          >
+            Projects
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-hover"
+            href={navHref("about/")}
+            aria-current={isActive("about") ? "page" : undefined}
+          >
+            About
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="h-12" id="nav-spacer"></div>
+</nav>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const dropdown = document.getElementById("nav-dropdown");
+  const chevron = document.getElementById("nav-chevron");
+  const spacer = document.getElementById("nav-spacer");
+
+  if (toggle && dropdown && chevron && spacer) {
+    const btn = toggle;
+    const menu = dropdown;
+    const icon = chevron;
+    const fill = spacer;
+
+    function closeDropdown() {
+      menu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Open navigation menu");
+      icon.textContent = "▼";
+      fill.style.display = "block";
+    }
+
+    function openDropdown() {
+      menu.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+      btn.setAttribute("aria-label", "Close navigation menu");
+      icon.textContent = "▲";
+      fill.style.display = "none";
+    }
+
+    btn.addEventListener("click", () => {
+      if (menu.classList.contains("open")) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        menu.classList.contains("open") &&
+        !btn.contains(event.target as Node) &&
+        !menu.contains(event.target as Node)
+      ) {
+        closeDropdown();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu.classList.contains("open")) {
+        closeDropdown();
+        btn.focus();
+      }
+    });
+  }
+</script>

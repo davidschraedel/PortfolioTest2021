@@ -26,6 +26,19 @@ const portfolioImages: Record<string, ImageMetadata> = {
   "youtube-transcript-pipeline": youtubeTranscriptPipeline,
 };
 
+/** Keys in profile.json with no PNG import yet — add assets or set `layout: "text-only"`. */
+export const unmappedPreviewImageKeys = [
+  ...new Set(
+    profile.projects
+      .filter(
+        (project) =>
+          project.layout !== "text-only" &&
+          !portfolioImages[project.previewImageKey],
+      )
+      .map((project) => project.previewImageKey),
+  ),
+];
+
 function withPreviewImage(project: RawProject): Project {
   return {
     ...project,
@@ -36,3 +49,9 @@ function withPreviewImage(project: RawProject): Project {
 export const projects: Project[] = profile.projects.map(withPreviewImage);
 
 export const featuredProjects = projects.filter((project) => project.featured);
+
+if (unmappedPreviewImageKeys.length > 0) {
+  console.warn(
+    `[projects.ts] previewImageKey has no asset import (layout expects media): ${unmappedPreviewImageKeys.join(", ")}`,
+  );
+}
