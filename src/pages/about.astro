@@ -23,7 +23,7 @@ import { about, headshotImage, person, timeline } from "../data/site";
     <p class="body-copy mx-auto mt-10 max-w-2xl text-center font-bold">{about.tldr}</p>
 
     <div class="content-shell mt-6">
-      <div class="body-copy body-copy-in-shell text-left">
+      <div class="body-copy body-copy-in-shell body-copy-photo-blur text-left">
         {
           about.paragraphs.map((paragraph) => (
             <p class="mb-4 last:mb-0">{paragraph}</p>
