@@ -12,7 +12,7 @@ Personal developer portfolio — recruiter-scannable and voice-first. One-line p
 
 **Current (legacy):** Static HTML/CSS/jQuery in `legacy/` — read-only reference
 
-**Deploy:** branch `staging` · GitHub Pages · repo `davidschraedel/PortfolioTest2021` · base `/PortfolioTest2021/` · URL `https://davidschraedel.github.io/PortfolioTest2021/` (project site — derive from git remote)
+**Deploy:** branch `staging` · GitHub Pages · URL `https://davidschraedel.github.io/[repo name]/` (project site — derive from git remote)
 
 ---
 

@@ -2,7 +2,7 @@ import { execSync } from "node:child_process";
 
 const FALLBACK = {
   site: "https://davidschraedel.github.io",
-  base: "/PortfolioTest2021/",
+  base: "/portfolio-test-2021/",
 };
 
 /** Derive Astro `site` and `base` from `git remote get-url origin` (GitHub Pages project site). */
