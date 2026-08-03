@@ -235,6 +235,28 @@
     @apply inline-block px-10 py-[23px] font-bold text-white no-underline transition-shadow;
   }
 
+  .foot-hover-email {
+    width: 50vw;
+  }
+
+  @media screen and (min-width: 601px) {
+    .foot-hover-email {
+      width: 37vw;
+    }
+  }
+
+  .foot-icon-link {
+    @apply px-[30px] py-[17.5px];
+    width: auto;
+  }
+
+  .foot-chevron-icon {
+    @apply block;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: white;
+  }
+
   .foot-hover:hover {
     @apply shadow-[0_0_50px_2px_rgb(28_45_57/0.115)];
     background-image: linear-gradient(

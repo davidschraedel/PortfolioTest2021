@@ -1,18 +1,19 @@
 ---
+import ChevronCircle from "./ChevronCircle.astro";
 import { person, presence, resumePath } from "../data/site";
 ---
 
 <footer class="px-4 pb-8 text-[3.2vw] sm:text-[19px]">
   <ul class="m-0 flex list-none flex-wrap items-center justify-center gap-2 overflow-hidden p-0">
     <li>
-      <a class="foot-hover" href="#topPageNav" aria-label="Back to top">
-        <span aria-hidden="true">▲</span>
+      <a class="foot-hover foot-icon-link" href="#topPageNav" aria-label="Back to top">
+        <ChevronCircle direction="up" class="foot-chevron-icon" />
       </a>
     </li>
     <li class="relative">
       <button
         type="button"
-        class="foot-hover cursor-pointer border-0 bg-transparent"
+        class="foot-hover foot-hover-email cursor-pointer border-0 bg-transparent"
         id="email-copy"
         data-email={person.email}
       >
