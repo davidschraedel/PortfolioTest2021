@@ -2,13 +2,12 @@
 
 A concise history of changes.
 
-## 2026-08-03 (P4 QA and launch)
+## 2026-08-03 (P4 QA)
 
 - Production build and preview verified (`npm run build`, `npm run preview`)
 - Link audit: all 15 external URLs in `profile.json` return 200 (LinkedIn returns 999 to bots — normal)
-- QA fixes: `ContactLinks` now includes resume, GitHub, Substack; nav home href double-slash fixed; demo CTA labels restored; `overflow-x-hidden` on body for mobile
+- QA fixes: nav home href double-slash fixed; `overflow-x-hidden` on body for mobile; nav dropdown background uses `--color-teal-center`
 - Legacy visual parity confirmed against `legacy/` (gradient, photo shells, frosted layers, chevron icons, tooltip, divider, responsive breakpoints)
-- Deploy: push `staging` branch to trigger GitHub Pages workflow
 
 ## 2026-07-29 (P3 corrections)
 
