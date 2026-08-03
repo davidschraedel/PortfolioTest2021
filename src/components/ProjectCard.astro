@@ -5,14 +5,6 @@ import type { Project } from "../data/projects";
 
 type Props = Project;
 
-function demoLabel(demoUrl: string, videoUrl: string | null): string {
-  if (videoUrl) return "Watch demo";
-  if (/youtube\.com|youtu\.be/i.test(demoUrl)) return "Watch demo";
-  if (/canva\.com/i.test(demoUrl)) return "View deck";
-  if (/datastudio\.google\.com|lookerstudio/i.test(demoUrl)) return "View dashboard";
-  return "Live demo";
-}
-
 const project = Astro.props;
 const {
   id,
@@ -28,9 +20,10 @@ const {
   layout,
 } = project;
 
-const hasDemo = Boolean(demoUrl);
+const hasDemoLink = Boolean(demoUrl || videoUrl);
+const demoHref = demoUrl ?? videoUrl!;
+const demoCta = "Take a look";
 const hasGithub = Boolean(githubUrl);
-const demoCta = hasDemo ? demoLabel(demoUrl!, videoUrl) : "";
 const imageFirst = layout === "media-left";
 const imageLast = layout === "media-right";
 const showImage = previewImage && layout !== "text-only";
@@ -87,13 +80,13 @@ const showImage = previewImage && layout !== "text-only";
       }
 
       {
-        (hasDemo || hasGithub) && (
+        (hasDemoLink || hasGithub) && (
           <div class="flex flex-wrap justify-center gap-3 md:justify-start">
             {
-              hasDemo && (
+              hasDemoLink && (
                 <a
                   class="btn btn-soft btn-soft-default"
-                  href={demoUrl!}
+                  href={demoHref}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
