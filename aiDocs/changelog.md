@@ -2,6 +2,14 @@
 
 A concise history of changes.
 
+## 2026-08-03 (P4 QA and launch)
+
+- Production build and preview verified (`npm run build`, `npm run preview`)
+- Link audit: all 15 external URLs in `profile.json` return 200 (LinkedIn returns 999 to bots — normal)
+- QA fixes: `ContactLinks` now includes resume, GitHub, Substack; nav home href double-slash fixed; demo CTA labels restored; `overflow-x-hidden` on body for mobile
+- Legacy visual parity confirmed against `legacy/` (gradient, photo shells, frosted layers, chevron icons, tooltip, divider, responsive breakpoints)
+- Deploy: push `staging` branch to trigger GitHub Pages workflow
+
 ## 2026-07-29 (P3 corrections)
 
 - Wire `about.tldr` on about page; `connect.heading` / `connect.paragraphs` in `ContactLinks.astro`

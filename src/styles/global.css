@@ -38,7 +38,7 @@
   }
 
   body {
-    @apply min-h-screen bg-page-body text-center antialiased;
+    @apply min-h-screen overflow-x-hidden bg-page-body text-center antialiased;
   }
 }
 
@@ -187,7 +187,7 @@
 
   .nav-dropdown {
     @apply absolute top-full right-0 z-50 hidden min-w-40 shadow-[0_8px_16px_0_rgb(0_0_0/0.2)];
-    background-color: var(--color-nav-hover);
+    background-color: var(--color-teal-center);
   }
 
   .nav-dropdown.open {

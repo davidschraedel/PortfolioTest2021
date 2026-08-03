@@ -2,7 +2,7 @@
 
 Personal developer portfolio — recruiter-scannable and voice-first. One-line pitch: [description.md](./description.md)
 
-**Status:** P3 complete — MVP pages, UI, and legacy styling parity done. Active roadmap: [2026-07-01_portfolio-astro-refactor_roadmap.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_roadmap.md) · Plan: [2026-07-01_portfolio-astro-refactor_plan.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_plan.md) · Analysis: [project-starting-state.md](../ai/notes/project-starting-state.md)
+**Status:** P4 complete — QA passed; deploy via push to `staging` branch. Active roadmap: [2026-07-01_portfolio-astro-refactor_roadmap.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_roadmap.md) · Plan: [2026-07-01_portfolio-astro-refactor_plan.md](../ai/roadmaps/2026-07-01_portfolio-astro-refactor_plan.md) · Analysis: [project-starting-state.md](../ai/notes/project-starting-state.md)
 
 **Post-MVP (not blocking launch):** Case study routes can exist as “coming soon” stubs; `handshakeLine` is in data but not rendered; PRD nice-to-haves (JSON-LD, sitemap, analytics, etc.) not built. **Before recruiter outreach:** add `hero.professionalSentence` to `profile.json` (adapter currently falls back to `home.tldr`) — see [mvp.md](./mvp.md) §5.
 
