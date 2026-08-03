@@ -97,7 +97,9 @@
 
   .frosted-header {
     @apply rounded-[15px] bg-frosted-header p-3.5 font-semibold;
-    box-shadow: 0 0 28px 3px white;
+    box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .content-card {
@@ -106,8 +108,7 @@
 
   /* --- Composed layout patterns --- */
 
-  /* legacy h1.lightShadow > .header_text */
-  .page-heading,
+  /* Outer frame for page h1 only (legacy h1.lightShadow > .header_text) */
   .hero-badge {
     @apply inline-block rounded-[15px] opacity-90 text-[7.75vw] font-semibold sm:text-[47px];
     padding: 7px 18px;
@@ -118,20 +119,30 @@
     box-shadow: 0 0 40px 10px rgb(242 236 236 / 0.616);
   }
 
-  /* Outer frame for section h2s that use frosted-header inside */
-  .heading-frame {
-    @apply inline-block rounded-[15px] opacity-90;
-    padding: 7px 18px;
+  .hero-badge .frosted-header {
+    @apply inline-block;
+  }
+
+  /* Section h2/h3 titles — scaled-down photo frame + inner frosted box */
+  .section-heading {
+    @apply inline-block rounded-[15px] text-lg font-semibold sm:text-xl;
+    padding: 4px 10px;
     background-color: var(--color-hero-tint);
     background-image: var(--url-signature-bg);
-    background-size: 800px;
+    background-size: 400px;
     background-position: center;
-    box-shadow: 0 0 40px 10px rgb(242 236 236 / 0.616);
+  }
+
+  .section-heading-inner {
+    @apply inline-block rounded-[15px] bg-frosted-header px-2.5 py-1 font-semibold;
+    box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   /* legacy .flex-container.distinct.div_img.lightShadow */
   .content-shell {
-    @apply mx-auto max-w-4xl rounded-[5px] px-4 py-6;
+    @apply relative mx-auto max-w-4xl rounded-[5px] px-4 py-6;
     @apply w-[80%] sm:w-[60%];
     padding-top: 10px;
     padding-bottom: 10px;
@@ -141,6 +152,13 @@
     background-position: center;
     background-repeat: no-repeat;
     box-shadow: 0 0 40px 10px rgb(242 236 236 / 0.616);
+  }
+
+  /* Project card text — frosted glass over shell (no photo on this layer) */
+  .body-copy.body-copy-photo-blur {
+    background-color: rgb(255 255 255 / 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .headshot {
@@ -156,13 +174,23 @@
 
   /* legacy .disconnect */
   .section-divider {
-    @apply mx-auto my-8 h-0.5 max-w-4xl px-0.5;
+    @apply mx-auto my-10 h-0.5 max-w-4xl px-0.5;
     padding: 1px 2px;
     background-image: linear-gradient(#aed9df1e, #d8d8d849);
     box-shadow: 0 0 40px 10px rgb(242 236 236 / 0.616);
   }
 
   /* --- Nav (legacy .navA) --- */
+  .nav-bar {
+    @apply sticky top-0 z-50;
+    background-color: color-mix(
+      in srgb,
+      var(--color-teal-center) 88%,
+      transparent
+    );
+    backdrop-filter: blur(10px);
+  }
+
   .nav-hover {
     @apply block px-[30px] py-5 font-bold text-white no-underline transition-shadow;
   }
@@ -227,26 +255,74 @@
   .body-copy {
     @apply mx-auto mb-4 max-w-2xl rounded-[15px] bg-frosted-body p-2.5 text-left text-base font-semibold leading-relaxed;
     @apply w-[60vw] sm:w-[50vw];
-    box-shadow: 0 0 28px 4px white;
+    box-shadow: 0 0 28px 4px rgba(255, 255, 255, 0.142);
   }
 
-  /* --- Footer (legacy .footA) --- */
+  .body-copy-in-shell {
+    @apply w-full max-w-none;
+  }
+
+  .project-image-link {
+    @apply block cursor-pointer no-underline;
+  }
+
+  .project-preview-frame {
+    @apply relative mx-auto w-full max-w-md overflow-hidden rounded-[15px];
+    aspect-ratio: 2600 / 1444;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .project-preview-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 50px 20px rgb(58 58 58 / 0.415);
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .project-preview-image {
+    @apply block h-full w-full object-cover;
+  }
+
+  .project-image-link:hover.project-preview-frame,
+  .project-image-link:focus-visible.project-preview-frame {
+    box-shadow: 0 0 20px 1px white;
+    transform: scale(1.015);
+  }
+
+  .project-image-link:hover.project-preview-frame::after,
+  .project-image-link:focus-visible.project-preview-frame::after {
+    opacity: 0;
+  }
+
+  /* --- Footer --- */
+  .footer-shell {
+    @apply text-center;
+  }
+
+  .footer-links {
+    @apply justify-center;
+  }
+
+  .footer-copyright {
+    @apply text-sm text-white/75;
+  }
+
   .foot-hover {
-    @apply inline-block px-10 py-[23px] font-bold text-white no-underline transition-shadow;
+    @apply inline-block px-4 py-2 font-bold text-white no-underline transition-shadow;
   }
 
   .foot-hover-email {
-    width: 50vw;
-  }
-
-  @media screen and (min-width: 601px) {
-    .foot-hover-email {
-      width: 37vw;
-    }
+    width: auto;
+    max-width: min(100%, 20rem);
   }
 
   .foot-icon-link {
-    @apply px-[30px] py-[17.5px];
+    @apply px-3 py-2;
     width: auto;
   }
 
@@ -292,8 +368,11 @@
     @apply hover:bg-nav-hover hover:text-white;
   }
 
-  .btn-footer {
-    @apply text-white mix-blend-soft-light hover:mix-blend-normal;
+  .btn-footer,
+  .btn-linkedin,
+  .btn-github,
+  .btn-substack {
+    @apply text-white;
   }
 
   .btn-linkedin {

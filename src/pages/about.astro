@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContactLinks from "../components/ContactLinks.astro";
 import Timeline from "../components/Timeline.astro";
 import { about, headshotImage, person, timeline } from "../data/site";
 ---
@@ -24,17 +23,17 @@ import { about, headshotImage, person, timeline } from "../data/site";
     <p class="body-copy mx-auto mt-10 max-w-2xl text-center font-bold">{about.tldr}</p>
 
     <div class="content-shell mt-6">
-      {
-        about.paragraphs.map((paragraph) => (
-          <p class="body-copy w-full max-w-none">{paragraph}</p>
-        ))
-      }
+      <div class="body-copy body-copy-in-shell text-left">
+        {
+          about.paragraphs.map((paragraph) => (
+            <p class="mb-4 last:mb-0">{paragraph}</p>
+          ))
+        }
+      </div>
     </div>
   </section>
 
   <section class="px-4 py-8">
     <Timeline entries={timeline} />
   </section>
-
-  <ContactLinks />
 </BaseLayout>

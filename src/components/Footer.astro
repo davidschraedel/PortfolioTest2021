@@ -3,13 +3,8 @@ import ChevronCircle from "./ChevronCircle.astro";
 import { person, presence, resumePath } from "../data/site";
 ---
 
-<footer class="px-4 pb-8 text-[3.2vw] sm:text-[19px]">
-  <ul class="m-0 flex list-none flex-wrap items-center justify-center gap-2 overflow-hidden p-0">
-    <li>
-      <a class="foot-hover foot-icon-link" href="#topPageNav" aria-label="Back to top">
-        <ChevronCircle direction="up" class="foot-chevron-icon" />
-      </a>
-    </li>
+<footer class="footer-shell px-4 pb-6 text-sm sm:text-base">
+  <ul class="footer-links m-0 flex list-none flex-wrap items-center justify-center gap-1 p-0">
     <li class="relative">
       <button
         type="button"
@@ -17,7 +12,7 @@ import { person, presence, resumePath } from "../data/site";
         id="email-copy"
         data-email={person.email}
       >
-        {person.email}
+        Email
       </button>
       <span class="email-tooltip" id="email-tooltip" role="status">Copy email address</span>
     </li>
@@ -28,7 +23,7 @@ import { person, presence, resumePath } from "../data/site";
     </li>
     <li>
       <a
-        class="foot-hover btn-footer btn-linkedin"
+        class="foot-hover btn-linkedin"
         href={presence.linkedin}
         target="_blank"
         rel="noopener noreferrer"
@@ -38,7 +33,7 @@ import { person, presence, resumePath } from "../data/site";
     </li>
     <li>
       <a
-        class="foot-hover btn-footer btn-github"
+        class="foot-hover btn-github"
         href={presence.github}
         target="_blank"
         rel="noopener noreferrer"
@@ -48,7 +43,7 @@ import { person, presence, resumePath } from "../data/site";
     </li>
     <li>
       <a
-        class="foot-hover btn-footer btn-substack"
+        class="foot-hover btn-substack"
         href={presence.substack}
         target="_blank"
         rel="noopener noreferrer"
@@ -56,12 +51,8 @@ import { person, presence, resumePath } from "../data/site";
         Substack
       </a>
     </li>
-    <li>
-      <span class=" inline-block px-[30px] py-2.5 font-bold text-white">
-        &copy; 2026 David Schraedel
-      </span>
-    </li>
   </ul>
+  <p class="footer-copyright m-0 mt-3">&copy; 2026 David Schraedel</p>
 </footer>
 
 <script>

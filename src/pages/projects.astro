@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContactLinks from "../components/ContactLinks.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { featuredProjects } from "../data/projects";
+import { projects } from "../data/projects";
 import { person, projectsPage } from "../data/site";
 ---
 
@@ -13,15 +12,13 @@ import { person, projectsPage } from "../data/site";
     </h1>
 
     <p class="body-copy mx-auto mt-8 text-center">
-      Selected work — Problem, Solution, stack, and links where available.
+      Selected work — objective, impact, stack, and links where available.
     </p>
 
     {
-      featuredProjects.map((project) => (
+      projects.map((project) => (
         <ProjectCard {...project} />
       ))
     }
   </section>
-
-  <ContactLinks />
 </BaseLayout>

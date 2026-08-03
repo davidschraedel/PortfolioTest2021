@@ -112,12 +112,12 @@ The site tells one story in four content beats. **Layout is flexible** — singl
 
 **Hook → Story → Projects → Contact**
 
-| Beat     | Content from `profile.json`                                                                  |
-| -------- | -------------------------------------------------------------------------------------------- |
-| Hook     | `hero.contrastLead`, `hero.professionalSentence`, `person.name`                              |
-| Story    | `about.paragraphs`, `about.heading`, `timeline`                                              |
-| Projects | All projects — Problem, Solution, stack, outbound links                                      |
-| Contact  | `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack` |
+| Beat     | Content from `profile.json`                                                                                                                    |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hook     | `hero.contrastLead`, `hero.professionalSentence`, `person.name`                                                                                |
+| Story    | `about.paragraphs`, `about.heading`, `timeline`                                                                                                |
+| Projects | Home: `featured: true` only. `/projects/`: **all** projects — objective, impact, stack, outbound links                                         | See **`featured` field** below |
+| Contact  | Home only: `connect.heading`, `connect.paragraphs`, Email + LinkedIn buttons. Footer: resume, email copy, LinkedIn, GitHub, Substack site-wide |
 
 Navigation labels and page structure may vary by design.
 
@@ -139,15 +139,17 @@ Navigation labels and page structure may vary by design.
 
 **3. Projects**
 
-- All projects in `profile.json`
-- Each card displays the problem and solution (sourced from `objective` and `impact` in JSON)
-- Stack tags per project
-- Live demo and GitHub links when URLs are set in `profile.json`
+- **`featured` field:** `true` = show on the **home** page featured section. Does **not** limit the projects page.
+- **`/projects/`** lists every project in `profile.json`.
+- Each card displays `objective` and `impact` (no separate Problem/Solution labels).
+- Stack tags per project.
+- Live demo and GitHub links when URLs are set in `profile.json`.
+- Preview image opens the demo link in a new tab when `demoUrl` or `videoUrl` is set.
 
 **4. Contact and links**
 
-- Resume PDF reachable from the site
-- Email, LinkedIn, GitHub, and Substack links reachable without hunting (`person.email`, `person.resume`, `presence.*`)
+- **Home page:** `connect` copy with Email and LinkedIn buttons only (matches the “send me a message via email or LinkedIn” CTA).
+- **Footer (all pages):** resume, email, email copy, LinkedIn, GitHub, Substack.
 - No contact forms
 
 **5. Stack and deploy**

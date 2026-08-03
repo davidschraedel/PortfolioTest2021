@@ -38,7 +38,14 @@ Exports person, hero, about, timeline, presence, connect, resume path (with `BAS
 
 ### `projects.ts`
 
-Maps all projects from profile, attaches `previewImage` from `astro:assets` imports keyed by `previewImageKey`, and exports `featuredProjects` via dynamic `featured: true` filter. Logs a build warning when a non-`text-only` project references an unmapped `previewImageKey` (currently `photo-book-generator`, `voice-first-portfolio`).
+Maps all projects from profile, attaches `previewImage` from `astro:assets` imports keyed by `previewImageKey`, exports:
+
+- **`projects`** — every entry in `profile.json` (used on `/projects/`)
+- **`featuredProjects`** — `featured: true` only (used on home)
+
+Logs a build warning when a project references an unmapped `previewImageKey`.
+
+**`featured` field:** Home page filter only. All projects always render on `/projects/`.
 
 ---
 
@@ -50,11 +57,11 @@ src/
 │   ├── headshot.jpg
 │   └── portfolio/*.png
 ├── components/
-│   ├── ContactLinks.astro   # Prominent resume / email / social CTAs
+│   ├── ContactLinks.astro   # Home only — connect copy + Email / LinkedIn
 │   ├── Footer.astro         # Back-to-top, email copy, footer links
 │   ├── Hero.astro           # Hook — contrastLead + professional sentence
 │   ├── Nav.astro            # Legacy dropdown pattern
-│   ├── ProjectCard.astro    # Problem / Solution / stack / demo / GitHub
+│   ├── ProjectCard.astro    # objective / impact / stack / demo / GitHub
 │   └── Timeline.astro       # Chronological about timeline
 ├── data/
 │   ├── profile.json
@@ -65,12 +72,13 @@ src/
 ├── pages/
 │   ├── index.astro          # Hero + featured projects + contact
 │   ├── about.astro          # Story — paragraphs, headshot, timeline
-│   └── portfolio.astro      # All featured projects
+│   └── projects.astro       # All projects
 └── styles/
     └── global.css           # Tailwind, legacy tokens, button system
 
 public/
 ├── favicon.png
+├── images/                  # Signature background photo for CSS
 └── resume.pdf
 ```
 
@@ -80,11 +88,11 @@ public/
 
 | Route         | Page              | MVP beat                               |
 | ------------- | ----------------- | -------------------------------------- |
-| `/`           | `index.astro`     | Hook, featured projects, contact       |
-| `/about/`     | `about.astro`     | Story (paragraphs, headshot, timeline) |
-| `/portfolio/` | `portfolio.astro` | Featured projects grid                 |
+| `/`           | `index.astro`     | Hook, featured projects, home contact (`ContactLinks`) |
+| `/about/`     | `about.astro`     | Story (paragraphs, headshot, timeline)               |
+| `/projects/`  | `projects.astro`  | All projects                                         |
 
-Nav dropdown links: LinkedIn (external), Portfolio, About.
+Nav links: Home, Projects, About.
 
 ---
 
@@ -92,14 +100,16 @@ Nav dropdown links: LinkedIn (external), Portfolio, About.
 
 | UI label       | JSON source                             | Notes                                                       |
 | -------------- | --------------------------------------- | ----------------------------------------------------------- |
-| Hero lead      | `hero.contrastLead`                     | Joined with `·`                                             |
+| Hero lead      | `hero.contrastLead`                     | Joined with `, `                                            |
 | Hero sentence  | `hero.professionalSentence`             | Falls back to `home.tldr` in adapter until field is added   |
 | About TL;DR    | `about.tldr`                            | Shown below headshot on about page                          |
-| Contact copy   | `connect.heading`, `connect.paragraphs` | Rendered in `ContactLinks.astro`                            |
-| Demo CTA label | `demoUrl`, `videoUrl`                   | `Watch demo` / `View deck` / `View dashboard` / `Live demo` |
-| Problem        | `projects[].objective`                  |                                                             |
-| Solution       | `projects[].impact`                     | PRD references `tradeOff`; profile uses `impact`            |
+| Contact copy   | `connect.heading`, `connect.paragraphs` | Home page only — `ContactLinks.astro`                       |
+| Contact CTAs   | Email, LinkedIn                         | Home page only; footer has full link set site-wide          |
+| Demo CTA       | `demoUrl`, `videoUrl`                   | Button label: `Take a look`; image links to same URL        |
+| Objective      | `projects[].objective`                  | First paragraph on card                                     |
+| Impact         | `projects[].impact`                     | Second paragraph on card                                    |
 | Stack tags     | `projects[].stack`                      |                                                             |
+| Home projects  | `projects[].featured === true`          | Subset on `/` only                                          |
 | About gallery  | `about.images`                          | Omitted until real assets exist                             |
 
 ---
@@ -109,7 +119,9 @@ Nav dropdown links: LinkedIn (external), Portfolio, About.
 Design tokens live in `@theme` inside `global.css`, mapped from the legacy teal radial-gradient palette. Reusable patterns:
 
 - `shell-gradient` — page background
-- `frosted-body` / `frosted-header` — legacy card boxes
+- `hero-badge` + `frosted-header` — page titles (h1)
+- `section-heading` + `section-heading-inner` — section titles (h2)
+- `frosted-body` / `body-copy` — text blocks
 - `content-shell` — centered column wrapper
 - `btn` + brand variants — project and contact CTAs
 
@@ -122,8 +134,9 @@ Design tokens live in `@theme` inside `global.css`, mapped from the legacy teal 
 | Nav dropdown toggle  | Inline `<script>` in `Nav.astro` (Escape closes menu) |
 | Email copy + tooltip | Inline `<script>` in `Footer.astro`                   |
 | Back to top          | Anchor to `#topPageNav`                               |
+| Mouse-reactive gradient | Inline `<script>` in `BaseLayout.astro`           |
 
-No React hydration. Mouse-reactive gradient deferred post-MVP.
+No React hydration.
 
 ---
 

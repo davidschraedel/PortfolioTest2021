@@ -25,14 +25,14 @@ function formatRange(entry: TimelineEntry) {
 ---
 
 <section aria-labelledby="timeline-heading">
-  <h2 class="heading-frame mx-auto mb-6 text-xl" id="timeline-heading">
-    <span class="frosted-header">Timeline</span>
+  <h2 class="section-heading mx-auto mb-6" id="timeline-heading">
+    <span class="section-heading-inner">Timeline</span>
   </h2>
 
   <ol class="mx-auto max-w-2xl list-none space-y-4 p-0 text-left">
     {
       sorted.map((entry) => (
-        <li class="body-copy w-full max-w-none">
+        <li class="body-copy body-copy-in-shell">
           <time class="mb-1 block text-sm font-bold text-nav-hover" datetime={entry.start}>
             {formatRange(entry)}
           </time>

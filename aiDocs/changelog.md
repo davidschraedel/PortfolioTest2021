@@ -2,6 +2,14 @@
 
 A concise history of changes.
 
+## 2026-08-03 (post-P4 fixes)
+
+- **`featured` semantics:** Home uses `featuredProjects`; `/projects/` uses all `projects`. Documented in PRD, MVP, and architecture.
+- Portfolio image map: `photo-book-generator`, `voice-first-portfolio`, renamed `iam.png`.
+- `ProjectCard`: uniform preview frame (`2600:1444`, KPI framework ratio); image above copy; clickable image opens demo URL.
+- `ContactLinks`: home page only; Email + LinkedIn (footer holds resume/GitHub/Substack).
+- Section headings: `section-heading` / `section-heading-inner` for h2-scale titles; `body-copy-in-shell` for nested copy.
+
 ## 2026-08-03 (P4 QA)
 
 - Production build and preview verified (`npm run build`, `npm run preview`)
